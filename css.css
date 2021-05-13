@@ -19,11 +19,11 @@ LI          { PADDING-TOP: 6px; }
 OL          { TEXT-ALIGN: left; TEXT-INDENT: 0px; }
 
 .nam        { COLOR: #7F7F7F; FONT-SIZE: 75%;  FONT-WEIGHT: bold; TEXT-ALIGN: right;
-              PADDING: 4px 4px; BORDER-BOTTOM: thin solid;  }
+              PADDING: 4px 4px; }
 .lnk        { COLOR: #7F7F7F; FONT-SIZE: 75%;  FONT-WEIGHT: bold; TEXT-ALIGN: left;
               BACKGROUND-COLOR: #FFFFFF; PADDING: 8px 4px; }
 .nav        { COLOR: #7F7F7F; FONT-SIZE: 75%;  FONT-WEIGHT: bold; TEXT-ALIGN: left;
-              BACKGROUND-COLOR: #C0C0C0; PADDING: 4px 4px; }       
+              BACKGROUND-COLOR: #C0C0C0; PADDING: 4px 4px; }
 
 .txt        { FONT-SIZE: 75%; TEXT-ALIGN: justify; TEXT-INDENT: 24px; LINE-HEIGHT: 140%; VERTICAL-ALIGN: top; }
 .cop        { FONT-SIZE: 70%; TEXT-ALIGN: center; PADDING-TOP: 12px; }
