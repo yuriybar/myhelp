@@ -1,7 +1,7 @@
 BODY        { BACKGROUND-COLOR: #7F7F7F; COLOR: #000000; TEXT-ALIGN: justify;
               FONT-FAMILY: Verdana, Arial, Helvetica, MS Sans Serif, Sans-Serif; }
 
-TABLE.m     { WIDTH: 920px; PADDING: 0px 60px; BACKGROUND-COLOR: #FFFFFF; }
+TABLE.m     { WIDTH: 920px; PADDING: 0px 40px; BACKGROUND-COLOR: #FFFFFF; }
 TABLE.tpar  { FONT-SIZE: 100%; LINE-HEIGHT: 140%; PADDING-LEFT: 48px; }
 
 A:link      { COLOR: #0055BB; TEXT-DECORATION: underline; }
