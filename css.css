@@ -1,13 +1,11 @@
-BODY        { BACKGROUND-COLOR: #7F7F7F; COLOR: #000000; TEXT-ALIGN: justify;
-              FONT-FAMILY: Verdana, Arial, Helvetica, MS Sans Serif, Sans-Serif; }
-
-TABLE.m     { WIDTH: 920px; PADDING: 0px 40px; BACKGROUND-COLOR: #FFFFFF; }
+BODY        { BACKGROUND-COLOR: #7F7F7F; COLOR: #000000; TEXT-ALIGN: justify; FONT-FAMILY: Verdana, Arial, Helvetica, MS Sans Serif, Sans-Serif; }
 
 A:link      { COLOR: #0055BB; TEXT-DECORATION: underline; }
 A:visited   { COLOR: #000066; TEXT-DECORATION: underline; }
 A:active    { COLOR: #000066; TEXT-DECORATION: underline; }
 A:hover     { COLOR: #CC3333; TEXT-DECORATION: underline; }
 
+TABLE.m     { WIDTH: 920px; PADDING: 0px 40px; BACKGROUND-COLOR: #FFFFFF; }
 TD.top      { PADDING-TOP: 28px; PADDING-BOTTOM: 12px; }
 TD.mid      { PADDING-TOP: 0px;  PADDING-BOTTOM: 12px; }
 TD.bot      { PADDING-TOP: 24px; PADDING-BOTTOM: 48px; }
@@ -21,28 +19,7 @@ OL          { TEXT-ALIGN: left; TEXT-INDENT: 0px; }
 .lnk        { COLOR: #7F7F7F; FONT-SIZE: 75%;  FONT-WEIGHT: bold; TEXT-ALIGN: left; BACKGROUND-COLOR: #FFFFFF; PADDING: 8px 4px; }
 .txt        { FONT-SIZE: 75%; TEXT-ALIGN: justify; TEXT-INDENT: 24px; LINE-HEIGHT: 140%; VERTICAL-ALIGN: top; }
 .image      { TEXT-INDENT: 0px; TEXT-ALIGN: center; PADDING: 6px 0px; FONT-STYLE: italic }
-.equ        { TEXT-INDENT: 0px; TEXT-ALIGN: left; PADDING-LEFT: 64px; }
-.dn         { TEXT-ALIGN: left; COLOR: #FF0000; FONT-WEIGHT: bold; LINE-HEIGHT: 2.2; }
-.dnt        { TEXT-INDENT: 0px; TEXT-ALIGN: left; PADDING-TOP: 10px; PADDING-LEFT: 24px; }
-.des        { MARGIN: 3px 0px 12px 0px; }
-.nws        { TEXT-INDENT: 0px; }
-.dmy        { COLOR: #0055BB; FONT-WEIGHT: bold; }
-.war        { COLOR: #FF0000; FONT-WEIGHT: bold; }
-
 .hd1        { COLOR: #336699; FONT-SIZE: 150%; FONT-WEIGHT: bold; TEXT-ALIGN: left; PADDING-TOP: 12px; }
 .hd2        { COLOR: #7F7F7F; FONT-SIZE: 150%; FONT-WEIGHT: bold; TEXT-ALIGN: left; PADDING-TOP: 12px; }
 .hd3        { FONT-WEIGHT: bold; TEXT-ALIGN: left; PADDING-TOP: 6px; }
 .hd4        { FONT-WEIGHT: bold; TEXT-ALIGN: left; MARGIN: 0px; }
-
-PRE.codeg   { COLOR: #000000; FONT-FAMILY: Courier; PADDING: 4px 4px; TEXT-INDENT: 0px; BACKGROUND-COLOR: #E0E0E0; }
-
-TD.w        { FONT-SIZE: 75%; TEXT-ALIGN: left; PADDING: 2px 6px; BACKGROUND-COLOR: #E0E0E0; }
-TD.wc       { FONT-SIZE: 75%; TEXT-ALIGN: center; PADDING: 2px 6px; BACKGROUND-COLOR: #E0E0E0; }
-TD.b        { FONT-SIZE: 75%; TEXT-ALIGN: left; PADDING: 2px 6px; BACKGROUND-COLOR: #99CCFF; }
-TD.bc       { FONT-SIZE: 75%; TEXT-ALIGN: center; PADDING: 2px 6px; BACKGROUND-COLOR: #99CCFF; }
-TD.par      { WIDTH: 400px; }
-
-TR.w        TD { FONT-SIZE: 75%; TEXT-ALIGN: left; PADDING: 2px 6px; BACKGROUND-COLOR: #E0E0E0; }
-TR.wc       TD { FONT-SIZE: 75%; TEXT-ALIGN: center; PADDING: 2px 6px; BACKGROUND-COLOR: #E0E0E0; }
-TR.b        TD { FONT-SIZE: 75%; TEXT-ALIGN: left; PADDING: 2px 6px; BACKGROUND-COLOR: #99CCFF; }
-TR.bc       TD { FONT-SIZE: 75%; TEXT-ALIGN: center; PADDING: 2px 6px; BACKGROUND-COLOR: #99CCFF; }
