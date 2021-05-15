@@ -5,8 +5,8 @@ A:visited   { COLOR: #000066; TEXT-DECORATION: underline; }
 A:active    { COLOR: #000066; TEXT-DECORATION: underline; }
 A:hover     { COLOR: #CC3333; TEXT-DECORATION: underline; }
 
-TABLE.m     { WIDTH: 920px; PADDING: 0px 40px; BACKGROUND-COLOR: #FFFFFF; }
-TD.top      { PADDING-TOP: 28px; PADDING-BOTTOM: 12px; }
+TABLE.m     { WIDTH: 90%; PADDING: 0px 4%; BACKGROUND-COLOR: #FFFFFF; }
+TD.top     { PADDING-TOP: 5%; PADDING-BOTTOM: 1%; }
 TD.mid      { PADDING-TOP: 0px;  PADDING-BOTTOM: 12px; }
 TD.bot      { PADDING-TOP: 24px; PADDING-BOTTOM: 48px; }
 
@@ -23,3 +23,5 @@ OL          { TEXT-ALIGN: left; TEXT-INDENT: 0px; }
 .hd2        { COLOR: #7F7F7F; FONT-SIZE: 150%; FONT-WEIGHT: bold; TEXT-ALIGN: left; PADDING-TOP: 12px; }
 .hd3        { FONT-WEIGHT: bold; TEXT-ALIGN: left; PADDING-TOP: 6px; }
 .hd4        { FONT-WEIGHT: bold; TEXT-ALIGN: left; MARGIN: 0px; }
+
+img, object, video, embed { max-width: 100%; min-width: 480px; }
