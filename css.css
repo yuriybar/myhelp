@@ -24,4 +24,4 @@ ol         { TEXT-ALIGN: left; TEXT-INDENT: 0px; }
 .hd3       { FONT-WEIGHT: bold; TEXT-ALIGN: left; PADDING-TOP: 6px; }
 .hd4       { FONT-WEIGHT: bold; TEXT-ALIGN: left; MARGIN: 0px; }
 
-img, object, video, embed { max-width: 100%; min-width: 320px; }
+img, object, video, embed { max-width: 100%; }
