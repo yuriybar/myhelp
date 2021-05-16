@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>Altium Designer 19 — советы и фишки, упрощающие проектирование — A_D Electronics</title>
+</head>
+<body>
+
+		<div class="entry-meta">
+
+		<h1 class="entry-title">Altium Designer 19 — советы и фишки, упрощающие&nbsp;проектирование</h1>	</header>
+
+	<div class="entry-content">
+		
+<p data-adtags-visited="true">Наконец-то я собрался написать по Альтиуму что-то по объёму более, чем заметка со&nbsp;<a href="https://adelectronics.ru/2018/12/03/%d0%bd%d0%be%d0%b2%d1%8b%d0%b5-%d0%b2%d0%be%d0%b7%d0%bc%d0%be%d0%b6%d0%bd%d0%be%d1%81%d1%82%d0%b8-altium-designer-19/">ссылкой на видосик</a>. :) Материал ниже — это сборник советов или просто фишек как нового 19-го Альтиума, так и прошлых версий. Думаю, это будет интересно как начинающему радиолюбителю, так и инженеру, уже давно работающему с Альтиумом.</p>
+
+<p data-adtags-visited="true">Статья разбита по отдельным советам\фишкам, начинается с верхушки (проект и схемотехника) и далее переходит по следующим ступеням (печатная плата, сборка плат) сквозного проектирования.</p>
+
+<p data-adtags-visited="true">Начнём с самого простого и не всегда популярного почему-то (видел, что далеко не все этим пользуются или даже не знают об этих инструментах):</p>
+
+<h2>Глобальное обновление количества листов схемы и их нумерация</h2>
+
+<p data-adtags-visited="true">Инструмент <strong>Number Schematic Sheets…</strong> находится в меню <strong>Tools</strong>-&gt;<strong>Annotation</strong>:</p>
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8471" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-1/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-1.png" data-orig-size="568,399" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-1" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-1.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-1.png?w=568" src="b81-1.png" alt="B81-1" class="wp-image-8471"></figure></div>
+
+<p data-adtags-visited="true">Выглядит он следующим образом:</p>
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8472" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-2/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-2.png" data-orig-size="814,517" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-2" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-2.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-2.png?w=700" src="b81-2.png" alt="B81-2" class="wp-image-8472"></figure></div>
+
+<p data-adtags-visited="true">Как можно видеть, в открытом проекте 4 листа схемы и общее количество листов (колонка <strong>SheetTotal</strong>) = 3, а также номера конкретных листов (колонка <strong>SheetNumber</strong>) не соответствуют фактическому количеству\позиции листа. Для автоматического назначения обоих параметров внизу нажимаем две кнопки (<strong>Auto Sheet Number</strong> и <strong>Update Sheet Count</strong>):</p>
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8473" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-3/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-3.png" data-orig-size="814,517" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-3" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-3.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-3.png?w=700" src="b81-3.png" alt="B81-3" class="wp-image-8473"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-0" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">После чего можно видеть вносимые изменения (помечены синими треугольниками на изменённых ячейках таблицы). Также можно вручную подкорректировать и внести изменения на листы путём нажатия кнопки <strong>ОК</strong>.</p>
+
+
+
+<p data-adtags-visited="true">Результат:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8474" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-4/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-4.png" data-orig-size="554,257" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-4" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-4.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-4.png?w=554" src="b81-4.png" alt="B81-4" class="wp-image-8474"></figure></div>
+
+
+
+<h2>Быстрое обновление или замена компонентов в схеме</h2>
+
+
+
+<p data-adtags-visited="true">Следующий инструмент удобен для быстрого и глобального обновления\замены компонентов простых типов, к примеру, используемые вами конденсаторы заимели статус <strong>NRND</strong> (Not Reccomend to New Designs), вы нашли замену, а свежий проект у вас на 5-10 листов схемы, а этих конденсаторов там сотни. Что делать? Да всё просто, используем инструмент <strong>Update From Libraries…</strong> (предварительно занеся новый тип конденсаторов в библиотеку компонентов, конечно же) из меню <strong>Tools</strong>:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8475" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-5/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-5.png" data-orig-size="253,390" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-5" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-5.png?w=195" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-5.png?w=253" src="b81-5.png" alt="B81-5" class="wp-image-8475"></figure></div>
+
+
+
+<p data-adtags-visited="true">Открывается следующее окно:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8476" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-6/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-6.png" data-orig-size="1513,1074" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-6" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-6.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-6.png?w=700" src="b81-6.png" alt="B81-6" class="wp-image-8476"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-1" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Здесь можно выбрать листы проекта, типы компонентов, которые будем обновлять или заменять. Далее происходит проверка наличия выбранных компонентов в библиотеке, и если их нет, будет отображен статус <strong>Not Found</strong>. На скриншоте ниже я уже выбрал новые конденсаторы взамен старых (кроме последнего, выделенного):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8477" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-7/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-7.png" data-orig-size="1513,1074" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-7" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-7.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-7.png?w=700" src="b81-7.png" alt="B81-7" class="wp-image-8477"></figure></div>
+
+
+
+<p data-adtags-visited="true">На примере последнего замена делается легко — просто выделяем строку с нужным компонентов (или группой, Ctrl+ и Shift+ здесь работают) и нажимаем ПКМ, выбираем <strong>Choose Component…</strong> :</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8478" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-8/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-8.png" data-orig-size="836,174" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-8" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-8.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-8.png?w=700" src="b81-8.png" alt="B81-8" class="wp-image-8478"></figure></div>
+
+
+
+<p data-adtags-visited="true">Далее вручную или поиском по <strong>Part Number</strong> находим нужную замену:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8479" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-9/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-9.png" data-orig-size="1024,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-9" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-9.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-9.png?w=700" src="b81-9.png" alt="B81-9" class="wp-image-8479"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-2" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Теперь слева можно отметить только те компоненты, которые мы хотим обновить\заменить, а справа, сняв галочку <strong>Full Replace,</strong> можно также выбрать, обновлять ли графическое представление, параметры и\или модели. Более того, выделив компоненты и нажав кнопку внизу&nbsp;<strong>Parametrs Changes…</strong> :</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8480" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-10/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-10.png" data-orig-size="1513,1074" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-10" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-10.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-10.png?w=700" src="b81-10.png" alt="B81-10" class="wp-image-8480"></figure></div>
+
+
+
+<p data-adtags-visited="true">Можно увидеть в открывшемся окне все параметры компонентов (по колонкам) с отметками, какие будут изменены (синий треугольник), какие удалены (красный минус), а какие добавлены (зелёный плюс):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8481" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-11/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-11.png" data-orig-size="966,565" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-11" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-11.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-11.png?w=700" src="b81-11.png" alt="B81-11" class="wp-image-8481"></figure></div>
+
+
+
+<p data-adtags-visited="true">Также можно отменить изменения, выделяем нужные ячейки (у меня, к примеру, на схеме вручную для некоторых компонентов был добавлен параметр ClassName со значением DirectConnect) и нажимаем ПКМ, выбираем пункт <strong>Reject</strong>:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8482" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-12/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-12.png" data-orig-size="271,363" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-12" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-12.png?w=224" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-12.png?w=271" src="b81-12.png" alt="B81-12" class="wp-image-8482"></figure></div>
+
+
+
+<p data-adtags-visited="true">Теперь эти параметры не будут удаляться:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8483" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-13/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-13.png" data-orig-size="966,565" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-13" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-13.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-13.png?w=700" src="b81-13.png" alt="B81-13" class="wp-image-8483"></figure></div>
+
+
+
+<p data-adtags-visited="true">После чего можно успешно обновить компоненты на схеме кнопкой <strong>Finish</strong> из главного окна инструмента <strong>Update From Libraries</strong>. Результат обновления будет выведен в отдельном окне:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8484" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-14/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-14.png" data-orig-size="1117,548" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-14" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-14.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-14.png?w=700" src="b81-14.png" alt="B81-14" class="wp-image-8484"></figure></div>
+
+<h2>Глобальные параметры проекта и их использование</h2>
+
+<p data-adtags-visited="true">Далеко не все пользуются глобальными параметрами проекта, которые работают на весь проект и позволяют задавать номера, ID или имена для автоматической подстановки как на схеме, так и на плате, и даже при генерации документации.</p>
+
+
+
+<p data-adtags-visited="true">Находятся они в опциях проекта:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8563" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-15/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-15-1.png" data-orig-size="421,399" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-15" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-15-1.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-15-1.png?w=421" src="b81-15-1.png" alt="B81-15" class="wp-image-8563"></figure></div>
+
+
+
+<p data-adtags-visited="true">Вкладка <strong>Parametrs</strong>:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8486" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-16/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-16.png" data-orig-size="1066,617" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-16" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-16.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-16.png?w=700" src="b81-16.png" alt="B81-16" class="wp-image-8486"></figure></div>
+
+
+
+<p data-adtags-visited="true">Здесь можно объявить идентификационный номер проекта, его имя, идентификационный номер платы и ревизию проекта. К примеру, объявлен параметр&nbsp;<strong>PCB_ID</strong>&nbsp;— идентификационный номер платы. И его можно использовать для автоматической подстановки в качестве сокращённого номера печатной платы на верхнем и нижнем слоях таким способом (свойства обычного текста на любом слое):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8490" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-20/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-20.png" data-orig-size="333,223" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-20" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-20.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-20.png?w=333" src="b81-20.png" alt="B81-20" class="wp-image-8490"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-3" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Выглядит на плате это так (текст на верхнем слое меди):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8489" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-19/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-19.png" data-orig-size="976,628" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-19" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-19.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-19.png?w=700" src="b81-19.png" alt="B81-19" class="wp-image-8489"></figure></div>
+
+
+
+<p data-adtags-visited="true">Тут кстати видна одна небольшая фишка культуры разработки печатной платы — дата проектирования. Состоит она из последних 2 цифр года и&nbsp;<a href="https://xn--d1ababprchchy.xn--p1ai/">номер недели</a>&nbsp;на момент завершения проектирования и разводки печатной платы (на скриншоте выше: <strong>1911</strong>).</p>
+
+
+
+<p data-adtags-visited="true">Также глобальные параметры можно использовать, к примеру, в Draftsman. Опять же инструмент текст, а его значение составляем из двух параметров проекта:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8488" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-18/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-18.png" data-orig-size="314,154" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-18" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-18.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-18.png?w=314" src="b81-18.png" alt="B81-18" class="wp-image-8488"></figure></div>
+
+
+
+<p data-adtags-visited="true"><em>Примечание:&nbsp;В плате параметры указываются через . (точку), а в Draftsman они вставляются через = (равно).</em></p>
+
+
+
+<p data-adtags-visited="true">И теперь, накидав простой сборочный чертёж для пайки прототипа, вставить текст с номерами проекта и платы:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8487" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-17/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-17.png" data-orig-size="1183,835" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-17" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-17.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-17.png?w=700" src="b81-17.png" alt="B81-17" class="wp-image-8487"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-4" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Ещё одно место, где удобно использовать глобальные параметры проекта — это файлы OutJob. Смотрите, делаем задачи по генерации документации:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8491" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-21/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-21.png" data-orig-size="433,536" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-21" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-21.png?w=242" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-21.png?w=433" src="b81-21.png" alt="B81-21" class="wp-image-8491"></figure></div>
+
+
+
+<p data-adtags-visited="true">А в настройках задачи можно подставлять параметры проекта:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8492" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-22/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-22.png" data-orig-size="816,374" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-22" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-22.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-22.png?w=700" src="b81-22.png" alt="B81-22" class="wp-image-8492"></figure></div>
+
+
+
+<p data-adtags-visited="true">Таким образом, файл сразу генерируется с именем, соответствующим текущему идентификационному номеру проекта, содержанию файла и ревизии.</p>
+
+
+
+<h2>Классы цепей (Net Class и Diff. Pair Net Class) и правила для них</h2>
+
+
+
+<p data-adtags-visited="true">Инструмент <strong>Parametr Set</strong> используется обычно для установки правил на группу или одиночную цепь:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8493" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-23/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-23.png" data-orig-size="239,547" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-23" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-23.png?w=131" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-23.png?w=239" src="b81-23.png" alt="B81-23" class="wp-image-8493"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-5" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">К примеру, можно задать для группы цепей правило на допустимую разницу величины всех длин цепей в пределах группы:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8495" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-25/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-25.png" data-orig-size="329,202" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-25" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-25.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-25.png?w=329" src="b81-25.png" alt="B81-25" class="wp-image-8495"></figure></div>
+
+
+
+<p data-adtags-visited="true">А также в свойствах этого инструмента содержится и колонка с именем класса, к которому будет относится цепь или группа цепей:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8494" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-24/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-24.png" data-orig-size="329,202" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-24" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-24.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-24.png?w=329" src="b81-24.png" alt="B81-24" class="wp-image-8494"></figure></div>
+
+
+
+<p data-adtags-visited="true">Более того, в инструменте определения дифференциальной пары — <strong>Differential Pair</strong>:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8496" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-26/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-26.png" data-orig-size="317,216" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-26" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-26.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-26.png?w=317" src="b81-26.png" alt="B81-26" class="wp-image-8496"></figure></div>
+
+
+
+<p data-adtags-visited="true">Также есть колонка с именем класса, к которому будет относиться эта дифференциальная пара:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8497" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-27/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-27.png" data-orig-size="335,206" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-27" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-27.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-27.png?w=335" src="b81-27.png" alt="B81-27" class="wp-image-8497"></figure></div>
+
+
+
+<p data-adtags-visited="true">Как можно заметить выше, классы для одиночных цепей и дифференциальных пар имеют различные типы, это удобно при создании правил.</p>
+
+
+
+<p data-adtags-visited="true">Вот можно видеть правило, созданное инструментом <strong>Parametr Set</strong> из схемы (с припиской <strong>Schematic *</strong> в имени правила):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8498" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-28/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-28.png" data-orig-size="973,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-28" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-28.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-28.png?w=700" src="b81-28.png" alt="B81-28" class="wp-image-8498"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-6" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">А вот правила, созданные вручную для конкретного класса:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8499" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-29/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-29.png" data-orig-size="973,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-29" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-29.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-29.png?w=700" src="b81-29.png" alt="B81-29" class="wp-image-8499"></figure></div>
+
+
+
+<p data-adtags-visited="true">Более того, во втором правиле толщины и зазоры дифференциальной пары берутся из профиля импеданса <strong>D100</strong>&nbsp;(про который будет рассказано далее):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8500" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-30/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-30.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-30" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-30.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-30.png?w=700" src="b81-30.png" alt="B81-30" class="wp-image-8500"></figure></div>
+
+
+
+<p data-adtags-visited="true">Основное отличие же — это создание правил для платы двумя основными путями:</p>
+
+
+
+<ol><li>На схеме, в свойствах инструментов <strong>Parametr Set</strong> или <strong>Differential Pair</strong>. В этом случае всё, вроде бы, удобно (задаём всё на схеме и далее уже не паримся) и по канону САПР — полностью сквозное проектирование, но если у вас куча однотипных цепей и для каждой стоит <strong>Parametr Set</strong>, то будет создано столько же и правил, несмотря на то, что они могут быть полностью идентичны (ещё бывает баг, что при импорте изменений из схемы в плату все правила, созданные таким путём, Альтиум как бы пересоздаёт, удаляя все текущие и добавляя их заново).</li><li>В параметрах платы создаём правила для различных типов классов и соответствующих имён, а в схеме цепи присваиваем конкретным классам и не более. В этом случае для всех однотипных цепей будет только одно правило (по имени класса), не будет дубликатов правил (как и возможного бага с постоянным перезаписыванием правил).</li></ol>
+
+
+
+<p data-adtags-visited="true"><em>Примечание:&nbsp;Нельзя однозначно сказать, что удобен всегда тот или иной путь, выбор, как создавать правила, необходимо делать в зависимости от задачи или ваших предпочтений. :)</em></p>
+
+<h2>Инструмент Smart Paste</h2>
+
+<p data-adtags-visited="true">Этот инструмент следует использовать, если у вас много однотипных объектов. Находится он здесь:</p>
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8566" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-93/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-93.png" data-orig-size="221,275" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-93" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-93.png?w=221" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-93.png?w=221" src="b81-93.png" alt="B81-93" class="wp-image-8566"></figure></div>
+
+
+
+<p data-adtags-visited="true">И наглядно увидеть, что с его помощью можно сделать, можно на гифке ниже:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8567" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-94/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-94.gif" data-orig-size="800,627" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-94" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-94.gif?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-94.gif?w=700" src="b81-94.gif" alt="B81-94" class="wp-image-8567"></figure></div>
+
+
+
+<p data-adtags-visited="true">Здесь я взял группу Net Labels, относящихся к I2S, и с помощью Smart Paste я могу их вставить как такую же группу, но другого типа объектов (порты, шина Harness, просто текст и т. д.), что может значительно ускорить проектирование схемы.</p>
+
+
+
+<h2>Правила технологических возможностей производства</h2>
+
+
+
+<p data-adtags-visited="true">Этот раздел с правилами, скорее, для совсем новичков, но решил, что стоит описать его для тех, кто первых раз будет проектировать свою печатную плату и делать потом заказ на производстве.</p>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-7" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Итак, вначале нам надо определиться, где мы хотим изготавливать печатную плату, и посмотреть, что завод-изготовитель может сделать. Возьмем для примера <a href="https://www.rezonit.ru/support/technology/urgent/index.php">технологические возможности от Резонита</a>. Для печатной платы с 18 мкм толщиной фольги и коэффициентом стоимости 1.5 (более сложное изготовление в сравнении со стандартным) можно отметить следующие основные параметры:</p>
+
+
+
+<ul><li>Металлизированное отверстие = 0,2 мм</li><li>Поясок площадки переходного отверстия = 0,1 мм</li></ul>
+
+
+
+<p data-adtags-visited="true">Эти два пункта взаимосвязаны и необходимо задать минимально-возможные значения для переходного отверстия (отверстие собственно = 0,2 мм, а внешний диаметр = 0,2 + 2 * 0,1 = 0,4 мм):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8501" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-31/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-31.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-31" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-31.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-31.png?w=700" src="b81-31.png" alt="B81-31" class="wp-image-8501"></figure></div>
+
+
+
+<ul><li>Поясок монтажной контактной площадки = 0,15 мм</li></ul>
+
+
+
+<p data-adtags-visited="true">Аналогично необходимо сделать и для контактных площадок.</p>
+
+
+
+<ul><li>Проводник на внешних слоях = 0,1 мм</li></ul>
+
+
+
+<p data-adtags-visited="true">Здесь всё просто, это минимально возможная толщина дорожки (максимальную стоит задавать в разумных пределах, исходя из величин токов на вашей плате):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8564" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-92/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-92.png" data-orig-size="1073,695" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-92" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-92.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-92.png?w=700" src="b81-92.png" alt="B81-92" class="wp-image-8564"></figure></div>
+
+
+
+<ul><li>Зазор между проводниками на внешних слоях = 0,1 мм</li></ul>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-8" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Здесь также всё просто — это минимальный зазор между любыми токопроводящими дорожками\полигонами\заливками:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8502" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-32/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-32.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-32" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-32.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-32.png?w=700" src="b81-32.png" alt="B81-32" class="wp-image-8502"></figure></div>
+
+
+
+<p data-adtags-visited="true"><em>Примечание:&nbsp;Стоит учитывать, что когда вы делаете выравнивание длин «змейкой» или любым другим способом, то зазор в пределах одной цепи по отношению самой к себе стоит делать немного больше этого, иначе возможна ситуация, когда производство вытравит плату, тестером замыканий между различными цепями не будет, зато возможны замыкания как раз в пределах одной цепи на «змейке».</em></p>
+
+
+
+<ul><li>Масочный мостик между контактными площадками = 0,1 мм</li></ul>
+
+
+
+<p data-adtags-visited="true">Тоже ничего сложного, просто минимальное расстояние между двумя масками (к примеру, на падах QFN корпуса):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8503" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-33/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-33.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-33" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-33.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-33.png?w=700" src="b81-33.png" alt="B81-33" class="wp-image-8503"></figure></div>
+
+
+
+<ul><li>Припуск паяльной маски = 0,025 мм</li></ul>
+
+
+
+<p data-adtags-visited="true">Насколько пад дополнительно открыт от маски относительно базового пада:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8504" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-34/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-34.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-34" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-34.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-34.png?w=700" src="b81-34.png" alt="B81-34" class="wp-image-8504"></figure></div>
+
+
+
+<ul><li>Отступ элементов топологии от края печатной платы = 0,4 мм</li></ul>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-9" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Минимальное расстояние от каких-либо элементов до края платы:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8505" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-35/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-35.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-35" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-35.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-35.png?w=700" src="b81-35.png" alt="B81-35" class="wp-image-8505"></figure></div>
+
+
+
+<p data-adtags-visited="true">Если это не соблюсти, то возможна ситуация, когда при фрезеровке края платы будут оторваны дорожки или повреждены внутренние слои.</p>
+
+
+
+<p data-adtags-visited="true"><em>Примечание:&nbsp;Для удобства эти правила можно сохранить в файл с названием производителя и стека, чтобы в дальнейшем легко экспортировать правила в новые платы (ПКМ на <strong>Design Rules,</strong> и там есть соответствующие пункты меню).</em></p>
+
+
+
+<h2>Стек печатной платы и профили импеданса</h2>
+
+
+
+<p data-adtags-visited="true">Возьмем для примера <a href="https://www.rezonit.ru/support/technology/urgent/index.php">стандартный стек для 8 слоёв, 18 мкм от Резонита</a>. Выглядит он следующим образом:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8506" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-36/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-36.png" data-orig-size="865,758" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-36" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-36.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-36.png?w=700" src="b81-36.png" alt="B81-36" class="wp-image-8506"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-10" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Инструмент <strong>Layer Stack Manager</strong> для редактирования стека печатной платы находится здесь:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8507" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-37/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-37.png" data-orig-size="319,357" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-37" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-37.png?w=268" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-37.png?w=319" src="b81-37.png" alt="B81-37" class="wp-image-8507"></figure></div>
+
+
+
+<p data-adtags-visited="true">Выглядит определение стека следующим образом:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8508" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-38/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-38.png" data-orig-size="800,504" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-38" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-38.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-38.png?w=700" src="b81-38.png" alt="B81-38" class="wp-image-8508"></figure></div>
+
+
+
+<p data-adtags-visited="true">Добавляются\удаляются слои через ПКМ. Также можно видеть, что ядро и препреги не из стандартной библиотеки материала Альтиума. Добавление корректных типов материалов, которые использует завод-изготовитель печатных плат, даёт более точные расчеты импедансов и симуляцию. Инструмент <strong>Material Library</strong> находится здесь:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8509" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-39/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-39.png" data-orig-size="174,145" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-39" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-39.png?w=174" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-39.png?w=174" src="b81-39.png" alt="B81-39" class="wp-image-8509"></figure></div>
+
+
+
+<p data-adtags-visited="true">Выглядит он следующим образом:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8510" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-40/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-40.png" data-orig-size="1002,540" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-40" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-40.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-40.png?w=700" src="b81-40.png" alt="B81-40" class="wp-image-8510"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-11" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true"><em>Примечание: Для удобства эти материалы можно сохранить в файл с названием производителя, чтобы в дальнейшем легко экспортировать материалы на новом рабочем месте (кнопки <strong>Load</strong> \ <strong>Save</strong> слева внизу).</em></p>
+
+
+
+<p data-adtags-visited="true">Рядом c Material Library также есть инструмент <strong>Layer Stack Visualizer</strong>, который позволяет наглядно оценить порядок слоёв, габариты стека в 2D\3D видах:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8511" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-41/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-41.png" data-orig-size="759,659" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-41" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-41.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-41.png?w=700" src="b81-41.png" alt="B81-41" class="wp-image-8511"></figure></div>
+
+
+
+<p data-adtags-visited="true">Также в Layer Stack Manager следующая вкладка — это <strong>Impedance</strong>:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8512" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-42/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-42.png" data-orig-size="1278,572" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-42" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-42.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-42.png?w=700" src="b81-42.png" alt="B81-42" class="wp-image-8512"></figure></div>
+
+
+
+<p data-adtags-visited="true">Здесь справа можно видеть все профили импедансов и послойно видеть параметры и экранирующие слои, на основе которых и идёт расчёт импедансов на целевом медном слое. Выбрав интересующий профиль, в его свойствах можно посмотреть более подробные параметры:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8513" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-43/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-43.png" data-orig-size="338,761" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-43" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-43.png?w=133" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-43.png?w=338" src="b81-43.png" alt="B81-43" class="wp-image-8513"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-12" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Выбрать его тип (одиночная цепь или дифференциальная пара), задать допуск импеданса, а также сделать выбор, каким образом производить расчёт:</p>
+
+
+
+<ol><li>Указать конкретную толщину дорожки и\или зазор между между дорожками и оценить получившееся значение импеданса.</li><li>Указать целевой импеданс, тогда значения толщины\зазора дорожек могут быть рассчитаны автоматически.</li></ol>
+
+
+
+<p data-adtags-visited="true">В обоих вариантах толщина дорожки во время разводки может варьироваться: минимальная — номинальная (заданной) — максимальная в пределах заданного допуска импеданса.</p>
+
+
+
+<p data-adtags-visited="true">Для чего нужны эти профили?</p>
+
+
+
+<p data-adtags-visited="true">Да всё просто, их теперь можно использовать в правилах:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8514" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-44/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-44.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-44" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-44.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-44.png?w=700" src="b81-44.png" alt="B81-44" class="wp-image-8514"></figure></div>
+
+
+
+<p data-adtags-visited="true">Выше — правило для LVDS, задающее толщины дорожек и зазор между ними на основании профиля <strong>D100</strong>. Таким же образом можно задавать толщину дорожки и для одиночной цепи:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8515" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-45/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-45.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-45" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-45.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-45.png?w=700" src="b81-45.png" alt="B81-45" class="wp-image-8515"></figure></div>
+
+
+
+<p data-adtags-visited="true">И вот тут как раз и удобно использовать классы цепей, задаваемые на уровне принципиальной схемы, о которых рассказывалось ранее, в качестве примера, таким образом можно легко создать одно правило разводки для (общего) LVDS класса, назначить в правиле необходимый профиль импеданса, а в схеме добавить все LVDS сигналы в этот класс.</p>
+
+<h2>Менеджер сеток привязки</h2>
+
+<p data-adtags-visited="true">Просмотр и редактирование всех сеток привязки для печатной платы находится в свойствах платы отдельным блоком — <strong>Grid Manager</strong>:</p>
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8516" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-46/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-46.png" data-orig-size="327,204" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-46" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-46.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-46.png?w=327" src="b81-46.png" alt="B81-46" class="wp-image-8516"></figure></div>
+
+
+
+<p data-adtags-visited="true">По умолчанию там одна глобальная сетка привязки (и она же переключается по клавише <strong>G</strong>), в которой обычно и работает инженер. Для примера вот так выглядит BGA корпус с сеткой 0,25 мм (её, правда, почти не видно, т. к. стоит точечный вид):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8517" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-47/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-47.png" data-orig-size="907,729" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-47" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-47.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-47.png?w=700" src="b81-47.png" alt="B81-47" class="wp-image-8517"></figure></div>
+
+
+
+<p data-adtags-visited="true">Нажмём <strong>Add</strong> и добавим новую сетку, укажем центр в центре BGA корпуса и сделаем шаг 0,1 мм:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8518" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-48/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-48.png" data-orig-size="816,521" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-48" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-48.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-48.png?w=700" src="b81-48.png" alt="B81-48" class="wp-image-8518"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-13" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Как можно видеть, сетка появилась:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8519" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-49/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-49.png" data-orig-size="831,751" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-49" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-49.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-49.png?w=700" src="b81-49.png" alt="B81-49" class="wp-image-8519"></figure></div>
+
+
+
+<p data-adtags-visited="true">Таким же образом можно добавлять и полярные сетки:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8520" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-50/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-50.png" data-orig-size="816,521" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-50" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-50.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-50.png?w=700" src="b81-50.png" alt="B81-50" class="wp-image-8520"></figure></div>
+
+
+
+<p data-adtags-visited="true">Выглядит это так:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8521" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-51/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-51.png" data-orig-size="912,752" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-51" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-51.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-51.png?w=700" src="b81-51.png" alt="B81-51" class="wp-image-8521"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-14" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">А для чего это нужно то?</p>
+
+
+
+<p data-adtags-visited="true">Таким образом можно организовывать локальную привязку, отличающуюся от глобальной. При использовании больших BGA корпусов шаг у них обычно ощутимо меньше, чем у остальных компонентов, и поэтому вести дорожки в пределах BGA корпуса легче, если есть локальная соответствующая шагу корпуса сетка.</p>
+
+
+
+<p data-adtags-visited="true">Привязка дорожки с переходом от декартовой сетки к полярной:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8522" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-52/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-52.gif" data-orig-size="800,527" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-52" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-52.gif?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-52.gif?w=700" src="b81-52.gif" alt="B81-52" class="wp-image-8522"></figure></div>
+
+
+
+<h2>Номера внутренних слоёв в специальном окне</h2>
+
+
+
+<p data-adtags-visited="true">Опять немного культуры проектирования. Это больше делают для панелей плат, но при наличии места на самой печатной плате окошки с номерами медных слоёв не помешают. Выглядит это так:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8523" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-52-2/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-52.png" data-orig-size="706,261" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-52" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-52.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-52.png?w=700" src="b81-52.png" alt="B81-52" class="wp-image-8523"></figure></div>
+
+
+
+<p data-adtags-visited="true">В 3D рендере:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8524" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-53/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-53.png" data-orig-size="667,240" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-53" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-53.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-53.png?w=667" src="b81-53.png" alt="B81-53" class="wp-image-8524"></figure></div>
+
+
+
+<p data-adtags-visited="true">Здесь можно видеть, что сигнальные слои размещены в квадрате, а plane слои в виде заливки с инвертированной цифрой слоя. Таким образом, можно наглядно видеть наличие слоёв и правильность их очерёдности (в пределах видимости через стеклотекстолит, слои как на скриншоте выше, так и на реальной плате с каждой стороны должны плавно исчезать по порядку).</p>
+
+<h2>Тип подключения компонента к полигону</h2>
+
+
+
+<p data-adtags-visited="true">Делаем DC-DC, к примеру, вот такая схема:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8525" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-54/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-54.png" data-orig-size="1066,475" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-54" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-54.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-54.png?w=700" src="b81-54.png" alt="B81-54" class="wp-image-8525"></figure></div>
+
+
+
+<p data-adtags-visited="true">И тут есть необходимость подключения DA2, L3, C36 и других компонентов без термобарьеров к полигонам. Как это сделать?</p>
+
+
+
+<p data-adtags-visited="true">Есть довольно простой способ, выделяем нужные нам компоненты, заходим в их параметры:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8526" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-55/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-55.png" data-orig-size="306,466" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-55" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-55.png?w=197" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-55.png?w=306" src="b81-55.png" alt="B81-55" class="wp-image-8526"></figure></div>
+
+
+
+<p data-adtags-visited="true">Все смежные по имени параметры здесь будут видны, но при различии их значения в качестве значения будет «<strong>*</strong>«, а в совпадающих по значению параметрах будет отображено их значение. Так вот, нажимаем кнопку <strong>Add</strong> внизу и добавляем параметр <strong>ClassName</strong> со значением <strong>DirectConnect</strong> (значение может быть и любое другое, главное, что бы оно легко запоминалось и четко идентифицировалось с предназначением). Теперь все эти компоненты находятся в классе компонентов DirectConnect.</p>
+
+
+
+<p data-adtags-visited="true">Далее, заходим в правила печатной платы и создаём привило подключения полигона для указанного класса компонентов:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8527" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-56/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-56.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-56" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-56.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-56.png?w=700" src="b81-56.png" alt="B81-56" class="wp-image-8527"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-15" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Всё. Результат:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8528" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-57/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-57.png" data-orig-size="927,813" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-57" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-57.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-57.png?w=700" src="b81-57.png" alt="B81-57" class="wp-image-8528"></figure></div>
+
+
+
+<p data-adtags-visited="true">DA2, L3, C36 и другие занесённые в этот класс компоненты будут теперь всегда подключаться без термобарьеров к любым полигонам.</p>
+
+
+
+<p data-adtags-visited="true"><em>Примечание: Здесь показан вариант исключительно для глобального правила подключения полигона, при желании можно также комбинировать класс компонента и имя цепи в качестве объектов для применения, а также ничего не мешает это использовать и в других типах правил.</em></p>
+
+
+
+<h2>Тип подключения отдельного пина компонента к полигону</h2>
+
+
+
+<p data-adtags-visited="true">Бывает такое, что нет необходимости подключения целого компонента к полигону без термобарьера, а надо подключить только 1-2 пина. Сделать это быстрее, чем через схему, можно с помощью классов контактных площадок (<strong>Pad Class</strong>). Заходим в обозреватель всех классов печатной платы:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8529" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-58/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-58.png" data-orig-size="329,357" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-58" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-58.png?w=276" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-58.png?w=329" src="b81-58.png" alt="B81-58" class="wp-image-8529"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-16" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Добавляем новый класс в <strong>Pad Classes</strong>&nbsp;с именем <strong>PadDirectConnect</strong> (имя может быть и любое другое, главное, чтобы оно легко запоминалось и четко идентифицировалось с предназначением) и добавляем в него необходимые пины компонентов (удобно пользоваться фильтром вверху для более быстрого поиска):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8530" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-59/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-59.png" data-orig-size="829,583" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-59" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-59.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-59.png?w=700" src="b81-59.png" alt="B81-59" class="wp-image-8530"></figure></div>
+
+
+
+<p data-adtags-visited="true">Далее заходим в правила печатной платы и создаём привило подключения полигона для указанного класса контактных площадок:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8531" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-60/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-60.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-60" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-60.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-60.png?w=700" src="b81-60.png" alt="B81-60" class="wp-image-8531"></figure></div>
+
+
+
+<p data-adtags-visited="true">Результат:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8532" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-61/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-61.png" data-orig-size="539,567" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-61" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-61.png?w=285" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-61.png?w=539" src="b81-61.png" alt="B81-61" class="wp-image-8532"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-17" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">C29, C30 были добавлены в PadDirectConnect класс и на них теперь действует правило прямого подключения полигона.</p>
+
+
+
+<h2>Тип подключения переходного отверстия к полигону</h2>
+
+
+
+<p data-adtags-visited="true">Ранее для этого необходимо было создавать отдельное правило с проверкой на <strong>IsVia</strong> и указанием подключения к полигону, в последних версиях Альтиума же просто заходим в базовое правило <strong>PolygonConnect</strong>, тут можно в <strong>Advanced</strong> режиме настроить подключение как переходных отверстий, так и отдельно выводных и планарных контактных площадок:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8533" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-62/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-62.png" data-orig-size="1291,728" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-62" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-62.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-62.png?w=700" src="b81-62.png" alt="B81-62" class="wp-image-8533"></figure></div>
+
+
+
+<h2>Настройка вида заливок и полигонов</h2>
+
+
+
+<p data-adtags-visited="true">Мелочь, но ощутимо влияет на наглядность разводки и нахождение ошибок и недоработок. Открываем <strong>View Configuration</strong> через <strong>Panels</strong>:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8534" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-63/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-63.png" data-orig-size="239,91" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-63" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-63.png?w=239" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-63.png?w=239" src="b81-63.png" alt="B81-63" class="wp-image-8534"></figure></div>
+
+
+
+<p data-adtags-visited="true">Или через двойной щелчок на цветном прямоугольнике, отображающем цвет текущего слоя:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8535" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-64/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-64.png" data-orig-size="99,69" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-64" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-64.png?w=99" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-64.png?w=99" src="b81-64.png" alt="B81-64" class="wp-image-8535"></figure></div>
+
+
+
+<p data-adtags-visited="true">Переходим во <strong>View Options</strong> и настраиваем параметр прозрачности (<strong>Transparency</strong>) для полигонов и регионов:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8536" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-65/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-65.png" data-orig-size="353,527" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-65" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-65.png?w=201" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-65.png?w=353" src="b81-65.png" alt="B81-65" class="wp-image-8536"></figure></div>
+
+
+
+<p data-adtags-visited="true">Результат:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8537" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-66/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-66.png" data-orig-size="929,539" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-66" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-66.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-66.png?w=700" src="b81-66.png" alt="B81-66" class="wp-image-8537"></figure></div>
+
+
+
+<p data-adtags-visited="true"><em>Примечание: Зайдите во <strong>View Options</strong> в 3D-режиме отображения печатной платы, опции отображения поменяются и можно настроить вид 3D более удобно для вас.</em></p>
+
+<h2>Фильтр объектов для выделения</h2>
+
+
+
+<p data-adtags-visited="true">Фильтр объектов для выделения находится здесь:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8568" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-95/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-95.png" data-orig-size="388,210" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-95" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-95.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-95.png?w=388" src="b81-95.png" alt="B81-95" class="wp-image-8568"></figure></div>
+
+
+
+<p data-adtags-visited="true">Если он активен, то появляется зелёный кружок на значке фильтра:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8569" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-96/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-96.png" data-orig-size="39,28" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-96" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-96.png?w=39" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-96.png?w=39" src="b81-96.png" alt="B81-96" class="wp-image-8569"></figure></div>
+
+
+
+<p data-adtags-visited="true">И наглядное отображение, как он работает:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8570" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-97/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-97.gif" data-orig-size="676,562" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-97" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-97.gif?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-97.gif?w=676" src="b81-97.gif" alt="B81-97" class="wp-image-8570"></figure></div>
+
+
+
+<p data-adtags-visited="true">Слева направо выделялись все объекты, что попадали в прямоугольник выделения, справа налево выделялись вообще все объекты, касающиеся прямоугольника выделения, а при активации фильтра&nbsp; выделялись только дорожки в обоих случаях.</p>
+
+
+
+<p data-adtags-visited="true">Да, к слову, если необходимо выделить контактные площадки компонента, которые не выделяются отдельно, то их необходимо выделять с Shift-ом:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8571" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-98/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-98.gif" data-orig-size="658,550" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-98" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-98.gif?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-98.gif?w=658" src="b81-98.gif" alt="B81-98" class="wp-image-8571"></figure></div>
+
+
+
+<h2>Инструмент Paste Special</h2>
+
+
+
+<p data-adtags-visited="true">Инструмент <strong>Paste Special</strong> находится здесь:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8572" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-99/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-99.png" data-orig-size="222,251" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-99" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-99.png?w=222" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-99.png?w=222" src="b81-99.png" alt="B81-99" class="wp-image-8572"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-18" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Наглядно для чего его можно использовать:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8573" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-100/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-100.gif" data-orig-size="800,577" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-100" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-100.gif?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-100.gif?w=700" src="b81-100.gif" alt="B81-100" class="wp-image-8573"></figure></div>
+
+
+
+<p data-adtags-visited="true">Таким образом можно легко и быстро сделать ряд контактных площадок какого либо компонента, настроив только первый, а далее скопировав его, вставить этим инструментом с авто инкрементом на заданную величину и с указанным шагом.</p>
+
+
+
+<h2>Маркер одной стороны печатной платы</h2>
+
+
+
+<p data-adtags-visited="true">Элемент культуры проектирования. Снова. Вот этот вырез справа, сверху:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8538" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-67/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-67.png" data-orig-size="569,690" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-67" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-67.png?w=247" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-67.png?w=569" src="b81-67.png" alt="B81-67" class="wp-image-8538"></figure></div>
+
+
+
+<p class="inline-ad-slot" id="inline-ad-19" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">На фигурных платах особо смысла он не имеет, а вот на квадратных или прямоугольных платах он всегда отображает правую сторону печатной платы:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8539" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-68/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-68.png" data-orig-size="775,777" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-68" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-68.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-68.png?w=700" src="b81-68.png" alt="B81-68" class="wp-image-8539"></figure></div>
+
+
+
+<p>Благодаря чему всегда ясно даже не разработчику, где у платы правый верхний угол и где у неё верх и низ по слоям.</p>
+
+
+
+<h2>Создание xSignals правил</h2>
+
+
+
+<p>Удобный инструмент для согласования по длине для DDR3, DDR4, USB 3.0 или группы специальных сигналов с наличием последовательных терминирующих резисторов (типа HyperBus). Классы <strong>xSignals</strong> можно глянуть в панели <strong>PCB</strong>:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8540" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-69/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-69.png" data-orig-size="361,332" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-69" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-69.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-69.png?w=361" src="b81-69.png" alt="B81-69" class="wp-image-8540"></figure></div>
+
+
+
+<p>Для создания новых классов и правил разводки стоит воспользоваться <strong>xSignal Wizard</strong>, который находится здесь:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8541" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-70/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-70.png" data-orig-size="485,357" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-70" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-70.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-70.png?w=485" src="b81-70.png" alt="B81-70" class="wp-image-8541"></figure></div>
+
+
+
+<p>На старте требуется выбрать тип сигналов, для примера выбираем <strong>Custom</strong>:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8542" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-71/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-71.png" data-orig-size="780,630" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-71" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-71.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-71.png?w=700" src="b81-71.png" alt="B81-71" class="wp-image-8542"></figure></div>
+
+
+
+<p>Далее поиском по компонентам выбираем источник сигналов (<strong>Source Component</strong>):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8543" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-72/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-72.png" data-orig-size="780,630" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-72" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-72.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-72.png?w=700" src="b81-72.png" alt="B81-72" class="wp-image-8543"></figure></div>
+
+
+
+<p>Какие сигналы требуется анализировать (<strong>Source Nets</strong>):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8544" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-73/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-73.png" data-orig-size="780,630" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-73" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-73.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-73.png?w=700" src="b81-73.png" alt="B81-73" class="wp-image-8544"></figure></div>
+
+
+
+<p>И указываем приёмник сигналов (<strong>Destination Component</strong>):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8545" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-74/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-74.png" data-orig-size="780,630" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-74" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-74.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-74.png?w=700" src="b81-74.png" alt="B81-74" class="wp-image-8545"></figure></div>
+
+
+
+<p>Далее отображаются пути по умолчанию, и если у вас используются резистивные сборки, то здесь возможно переопределить пути в пределах доступной сборки:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8546" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-75/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-75.png" data-orig-size="780,630" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-75" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-75.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-75.png?w=700" src="b81-75.png" alt="B81-75" class="wp-image-8546"></figure></div>
+
+
+
+<p>Да, при выборе какого-либо пути на плате можно в этот момент посмотреть, как он пролегает (также и альтернативные пути с ремапом):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8547" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-76/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-76.gif" data-orig-size="800,448" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-76" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-76.gif?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-76.gif?w=700" src="b81-76.gif" alt="B81-76" class="wp-image-8547"></figure></div>
+
+
+
+<p>После выбора путей для всех сигналов создаётся класс для них и правило разводки (для HyperBUS здесь максимальная разница в длине указывается = 0,6&nbsp; мм):</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8548" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-77/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-77.png" data-orig-size="780,630" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-77" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-77.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-77.png?w=700" src="b81-77.png" alt="B81-77" class="wp-image-8548"></figure></div>
+
+
+
+<p>Также отдельно можно сделать правила для выравнивания не только общей длины проводников, но их же по отдельности как до, так и после последовательных терминирующих резисторов:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8549" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-78/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-78.png" data-orig-size="780,630" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-78" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-78.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-78.png?w=700" src="b81-78.png" alt="B81-78" class="wp-image-8549"></figure></div>
+
+
+
+<p>Автоматически созданное правило для класса xSignals:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8550" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-79/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-79.png" data-orig-size="914,612" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-79" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-79.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-79.png?w=700" src="b81-79.png" alt="B81-79" class="wp-image-8550"></figure></div>
+
+
+
+<p><em>Примечание: При каких-либо изменениях (замена компонента или переброс интерфейса на другие пины), затрагивающих компоненты, участвующие&nbsp;в xSignals классе, к сожалению, его придётся&nbsp;создавать заново. По крайне мере, в 19.0.13 класс и его проверки ломались…&nbsp;</em></p>
+
+<h2>Мультибоард проект</h2>
+
+
+
+<p>И последнее. Мультибоард проект — сборка плат в одном проекте:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8551" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-80/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-80.png" data-orig-size="337,358" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-80" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-80.png?w=282" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-80.png?w=337" src="b81-80.png" alt="B81-80" class="wp-image-8551"></figure></div>
+
+
+
+<p>После создания мультибоард проекта и добавления в него документа структурной схемы, следующий шаг — добавление модулей (проектов плат), этот инструмент находится здесь:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8552" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-81/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-81.png" data-orig-size="914,453" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-81" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-81.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-81.png?w=700" src="b81-81.png" alt="B81-81" class="wp-image-8552"></figure></div>
+
+
+
+<p>Рисуем 2 прямоугольника или квадрата — это будет структурное отображение 2-х проектов, входящих в сборку. Заходим в параметры каждого и указываем проект-источник и плату в нём:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8553" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-82/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-82.png" data-orig-size="361,262" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-82" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-82.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-82.png?w=361" src="b81-82.png" alt="B81-82" class="wp-image-8553"></figure></div>
+
+
+
+<p>После чего указанные проекты автоматически появятся в составе мультибоард проекта.</p>
+
+
+
+<p>Да, нюанс, если вы хотите показать разъёмы, которыми сочленяются эти два проекта, то необходимо у каждого из разъёмов добавить параметр <strong>System</strong> со значением <strong>Connector</strong> :</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8554" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-83/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-83.png" data-orig-size="311,505" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-83" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-83.png?w=185" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-83.png?w=311" src="b81-83.png" alt="B81-83" class="wp-image-8554"></figure></div>
+
+
+
+<p>После чего при выполнении импорта с проектов сборки с помощью ПКМ на любом модуле и выборе пункта <strong>Import From Child Projects</strong>:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8565" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-84/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-84-1.png" data-orig-size="453,320" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-84" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-84-1.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-84-1.png?w=453" src="b81-84-1.png" alt="B81-84" class="wp-image-8565"></figure></div>
+
+
+
+<p>Будет предложено добавить соответствующие разъёмы (у которых в схеме был добавлен параметр System со значением Connector) в составы моделей:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8556" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-85/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-85.png" data-orig-size="1117,550" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-85" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-85.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-85.png?w=700" src="b81-85.png" alt="B81-85" class="wp-image-8556"></figure></div>
+
+
+
+<p>Теперь они выглядят так:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8557" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-86/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-86.png" data-orig-size="910,370" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-86" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-86.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-86.png?w=700" src="b81-86.png" alt="B81-86" class="wp-image-8557"></figure></div>
+
+
+
+<p>Только вот у <strong>XS1</strong> вид не розетки, а вилки — надо исправить! Выделяем его и в параметрах указываем тип <strong>Female</strong>:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8558" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-87/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-87.png" data-orig-size="359,219" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-87" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-87.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-87.png?w=359" src="b81-87.png" alt="B81-87" class="wp-image-8558"></figure></div>
+
+
+
+<p><em>Примечание: Вот этот момент для меня несколько не ясен, почему нельзя было сразу в качестве значения параметра System указывать и тип. Загадка…</em></p>
+
+
+
+<p>Далее можно провести соединение:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8559" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-88/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-88.png" data-orig-size="380,423" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-88" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-88.png?w=270" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-88.png?w=380" src="b81-88.png" alt="B81-88" class="wp-image-8559"></figure></div>
+
+
+
+<p>Это крайне простой пример, без ответвлений и массы различных соединителей, модулей.</p>
+
+
+
+<p>Далее в созданном файле сборки импортируем изменения со структурной схемы:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8560" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-89/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-89.png" data-orig-size="875,512" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-89" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-89.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-89.png?w=700" src="b81-89.png" alt="B81-89" class="wp-image-8560"></figure></div>
+
+
+
+<p>Появятся 2 платы:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8561" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-90/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-90.png" data-orig-size="623,874" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-90" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-90.png?w=214" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-90.png?w=623" src="b81-90.png" alt="B81-90" class="wp-image-8561"></figure></div>
+
+
+
+<p>Их можно сочленить по межплатному разъёму и наглядно увидеть проблемы или отсутствие оных по габаритам и размещению компонентов на платах в сборе:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8562" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-91/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-91.png" data-orig-size="851,776" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-91" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-91.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-91.png?w=700" src="b81-91.png" alt="B81-91" class="wp-image-8562"></figure></div>
+
+
+
+<p><em>Примечание: Более подробно не могу показать платы и работу с ними по некоторым причинам, думаю, главное показать в целом, а если кого заинтересовало, предлагаю изучить самостоятельно, и в качестве старта посмотреть&nbsp;работу с мультибоард-проектом в <a href="https://www.youtube.com/watch?v=m7TczbTQl4U">видео тут</a>.</em></p>
+
+
+
+<p>На этом всё, если есть замечания или знаете как сделать лучше — пишите комментарии, буду рад! Спасибо, что прочитали. ;)</p>
+</body></html>
