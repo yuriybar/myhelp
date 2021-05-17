@@ -11,7 +11,7 @@ td.mid     { PADDING-TOP: 0px;  PADDING-BOTTOM: 12px; }
 td.bot     { PADDING-TOP: 24px; PADDING-BOTTOM: 48px; }
 
 ul         { TEXT-ALIGN: left; TEXT-INDENT: 0px; }
-li         { PADDING-TOP: 6px; }
+li         { PADDING-TOP: 10px; }
 ol         { TEXT-ALIGN: left; TEXT-INDENT: 0px; }
 
 .nam       { COLOR: #7F7F7F; FONT-SIZE: 75%;  FONT-WEIGHT: bold; TEXT-ALIGN: right; PADDING: 4px 4px; }
