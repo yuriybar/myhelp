@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page not found</title>
+<title>Подсказки по GIT</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width">
   <link href="../css.css" type="text/css" rel="stylesheet">
@@ -20,7 +20,19 @@
   <td  align="center"><font face="Arial">
       <h1><font color="#00A000">Кое-что про GIT</font></h1>
       <p><strong>Описание некоторых возможностей системы контроля версий GIT.</strong></p>
-      <p>Первое.</p>
+
+
+   <div class="hd3">Авторизация по ключам ssh</div>
+    <ul>
+      <li>Сгенерировать пару ключей, приватный и публичный.</li>
+      <li>Сохранить их, например в домашнюю папку: c:/Users/user_name/.ssh/</li>
+      <li>Добавить публичный ключ на Github.</li>
+      <li>Запустить ssh agent командой: eval "$(ssh-agent -s)"</li>
+      <li>Добавить приватный ключ указав путь к нему: ssh-add ~/.ssh/id_rsa</li>
+      <li>Переключить агента с https на ssh: git remote set-url origin git@github.com:yuriybar/myhelp.git</li>
+      <li>Проверить доступ на Github: ssh -T git@github.com</li>
+    </ul>
+
       <a href="../index.html"><strong>[ Вернуться к оглавлению ]</strong></a></font>
   </td>
 </tr>
