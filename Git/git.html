@@ -38,6 +38,126 @@
 </tr>
 <tr>
   <td class="txt">
+    <div class="hd3">Настройка GIT</div>
+    <ul>
+      <li><font color="#FF0000">git config --global user.name "My Name"</font> - Настройка пользователя</li>
+      <li><font color="#FF0000">git config --global user.email myEmail@example.com</font> - Настройка email</li>
+      <li><font color="#FF0000">git config credential.helper store</font> - Чтобы сохранялся пароль</li>
+      <li><font color="#FF0000">git config --unset credential.helper</font> - Обнулить настройки этой возможности можно командой</li>
+      <li><font color="#FF0000">git config --list</font> - Посмотреть настройки (Для выхода клавиша q)</font></li>
+      <li><font color="#FF0000">git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"</font> - Настройка внешнего редактора</font></li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td class="txt">
+    <ul>
+      <li><font color="#FF0000">git pull</font> - Получить все изменения с Github<font color="#FF0000">Shift+Space</font> - меняет режим угла проводника 90 - 45 - Any</li>
+      <li><font color="#FF0000">git status</font> - Отобразит текущее состояние проекта (что изменилось но не сохранено в репозитории)</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td class="txt">
+<pre>
+
+# Адрес репозитороия на GitHub:
+git@github.com:yuriybar/myhelp.git
+
+***
+Чтобы удалить директорию из репозитория просто удаляете директорию стандартными методами ОС, а затем делаете:
+git add .
+и
+git commit -m 'Удалена директория folder'
+
+Ну и отправляете новый код на сервер, соответственно: 
+git push
+
+
+После изменения файлов:
+git commit -a
+Правим комментарий и затем
+git push
+
+При добавлении или удалении файлов:
+git add .
+git commit -a
+Правим комментарий и затем
+git push
+***
+
+Сервисы с бесплатными репозиториями: gitlab, bitbucket.org, 
+
+Как выйти из vim?
+Нажать ESC 
+Набрать двоеточие и затем команду например
+Для выхода без сохранения :q! или :q
+Для выхода с сохранением набрать :wq
+
+
+i - переход в режим редактирования текста
+ESC - переход в командный режим
+x - удаление символа под курсором
+A - добавление текста в конец текущей строки
+a - добавление текста после курсора
+
+
+===============================================================================
+#Создаем репозиторий на Ядиске
+
+#Создаем каталог под локальный репозиторий
+mkdir /mnt/data/Project/test_repo
+#Переходим в него
+cd /mnt/data/Project/test_repo
+#Создаем локальный репозиторий
+git init
+#Создаем файл hello_world.txt c произвольным содержимым
+touch hello_world.txt
+nano hello_world.txt
+#Помещаем только что созданный файл под контроль Git
+git add .
+#Фиксируем изменения
+git commit -m "First commit"
+#Создаем удаленный репозиторий
+mkdir /mnt/data/Яндекс.Диск/git_repo/test_repo.git
+#Переходим в него
+cd /mnt/data/Яндекс.Диск/git_repo/test_repo.git
+#Создаем репозиторий без рабочей копии
+git init --bare
+#Возвращаемся в локальный репозиторий
+cd /mnt/data/Project/test_repo
+#В локальном репозитории указываем где искать удаленный
+#yandex_disk - псевдоним для полного пути к удаленному репозиторию
+git remote add yandex_disk /mnt/data/Яндекс.Диск/git_repo/test_repo.git
+#Передаем изменения из локального репозитория в удаленный
+#master - текущая ветка разработки
+git push yandex_disk master
+
+#Настройка Git для возможности делать локальный PUSH (для репы на Ядиске)
+git config receive.denyCurrentBranch updateInstead
+git config --bool core.bare true
+===============================================================================
+
+Добавить ключи:
+ssh-add ~/.ssh/id_rsa
+
+Проверить статус репозитория:
+git remote -v
+
+Проверка доступа на Github:
+ssh -T git@github.com
+===============================================================================
+
+Переключение агента с https на ssh:
+git remote set-url origin git@github.com:yuriybar/myhelp.git
+
+Обратное переключение при необходимости:
+git remote set-url origin https://github.com/yuriybar/myhelp.git
+</pre>
+  </td>
+</tr>
+<tr>
+  <td class="txt">
     <ul>
       <li><a href="../Git/gitignore.html">Про файл .gitignore</a> - Описание и пример</li>
     </ul>
