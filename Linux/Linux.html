@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Подсказки по GIT</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="../question mark.ico" type="image/x-icon">
+  <link href="../css.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<table cellspacing="0" align="center">
+<tbody>
+<tr><td>&nbsp;</td></tr>
+<tr>
+  <td class="top">
+    <div class="nam">Система подсказок v.0.1.</div>
+    <div class="nav"> <a href="../index.html">Содержание</a> - Про GIT </div>
+  </td>
+</tr>
+<tr>
+  <td align="center"><img src="Linux.jpg">
+    <p><strong><font face="Arial">Описание некоторых команд системы Linux.</font></strong><BR><BR></p>
+  </td>
+</tr>
+<tr>
+  <td class="txt">
+   <div class="hd3">Общие</div>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4 (<a href="https://github.com/settings/keys">https://github.com/settings/keys</a>)</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td class="txt">
+    <div class="hd3">Настройка GIT</div>
+    <ul>
+      <li><font color="#FF0000">git config --global user.name "My Name"</font> - Настройка пользователя</li>
+      <li><font color="#FF0000">git config --global user.email myEmail@example.com</font> - Настройка email</li>
+      <li><font color="#FF0000">git config credential.helper store</font> - Чтобы сохранялся пароль</li>
+      <li><font color="#FF0000">git config --unset credential.helper</font> - Обнулить настройки этой возможности можно командой</li>
+      <li><font color="#FF0000">git config --list</font> - Посмотреть настройки (Для выхода клавиша q)</font></li>
+      <li><font color="#FF0000">git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"</font> - Настройка внешнего редактора</font></li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td class="txt">
+    <ul>
+      <li><font color="#FF0000">git pull</font> - Получить все изменения с Github</li>
+      <li><font color="#FF0000">git status</font> - Отобразит текущее состояние проекта (что изменилось но не сохранено в репозитории)</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td class="txt">
+<pre>
+# Адрес репозитороия на GitHub:
+git@github.com:yuriybar/myhelp.git
+
+***
+===============================================================================
+#yandex_disk - псевдоним для полного пути к удаленному репозиторию
+git remote add yandex_disk /mnt/data/Яндекс.Диск/git_repo/test_repo.git
+#Передаем изменения из локального репозитория в удаленный
+git remote -v
+
+Проверка доступа на Github:
+ssh -T git@github.com
+===============================================================================
+
+Переключение агента с https на ssh:
+git remote set-url origin git@github.com:yuriybar/myhelp.git
+
+Обратное переключение при необходимости:
+git remote set-url origin https://github.com/yuriybar/myhelp.git
+</pre>
+  </td>
+</tr>
+<tr>
+  <td class="txt">
+    <ul>
+      <li><a href="../Git/gitignore.html">Про файл .gitignore</a> - Описание и пример</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td class="bot">
+    <div class="nav"> <a href="../index.html">Содержание</a> - Про GIT </div>
+  </td>
+</tr>
+</tbody>
+</table>
+</body></html>
