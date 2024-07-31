@@ -5,7 +5,7 @@ a:visited  { COLOR: #000066; TEXT-DECORATION: underline; }
 a:active   { COLOR: #000066; TEXT-DECORATION: underline; }
 a:hover    { COLOR: #CC3333; TEXT-DECORATION: underline; }
 
-table      { WIDTH: 90%; MAX-WIDTH: 900px; PADDING: 0px 4%; BACKGROUND-COLOR: #FFFFFF; }
+table      { WIDTH: 95%; MAX-WIDTH: 1080px; PADDING: 0px 4%; BACKGROUND-COLOR: #FFFFFF; }
 td.top     { PADDING-TOP: 0px; PADDING-BOTTOM: 1%; }
 td.mid     { PADDING-TOP: 0px;  PADDING-BOTTOM: 12px; }
 td.bot     { PADDING-TOP: 24px; PADDING-BOTTOM: 48px; }
