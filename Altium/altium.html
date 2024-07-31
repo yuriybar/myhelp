@@ -50,7 +50,7 @@
       <li><font color="#FF0000">T-A-A</font> - Перемаркировка позиционных обозначений</li>
       <li><font color="#FF0000">T-L</font> - Обновление из библиотеки <font color="#0000E0">(Menu\Tools\Update From Libraries)</font></li>
       <li><font color="#FF0000">P-W</font> - Соединение. <font color="#FF0000">Shift+Space</font> - меняет режим угла проводника 90 - 45 - Any</li>
-      <li>Подсветка цепей в SCH - нажать на иконку с карандашом <img src="Net_color.png" width="35" height="20" border="1"> и выбрать цепь</li>
+      <li style="padding-top: 2px">Подсветка цепей в SCH - нажать на иконку с карандашом <img src="Net_color.png" width="35" height="20" border="1"> и выбрать цепь</li>
       <li>Символ надчеркивания в цепях - Либо ПОСЛЕ каждой буквы вставить <font color="#0000E0">\</font> , 
     либо ПЕРЕД всем текстом и включить <font color="#0000E0">DXP/Preferences/Schematic/Grafical Editing/Single `\` Negation</font></li>
       <li>Настройка примитивов по умолчанию - <font color="#0000E0">DXP/Preferences/Schematic/Default Primitives</font></li>
@@ -127,6 +127,24 @@
       <li><font color="#FF0000">Ctrl+D</font> (или просто <font color="#FF0000">L</font> и выбрать вкладку <font color="#0000E0">Show/Hide</font>) - для настройки способа отображения полигонов и прочего</li>
       <li><font color="#FF0000">Ctrl+ЛКМ</font> - На стороне полигона добавит новую вершину</li>
       <li><font color="#FF0000">ЛКМ+Delete</font> - На вершине полигона удалит эту вершину</li>
+    </ul>
+
+    <div class="hd3">Дифференциальные цепи</div>
+    <ul>
+      <li><font color="#B000B0">В редакторе схем:</font></li>
+      <ol>
+        <li><font color="#FF0000">P-N</font> - проставить на схеме <font color="#0000E0">Net Lable</font> с суффиксами <font color="#0000E0">_P</font> и <font color="#0000E0">_N</font> на каждом проводе дифф.пары, например: <font color="#00A000">Name_P</font> и <font color="#00A000">Name_N</font></li>
+        <li style="padding-top: 2px"><font color="#FF0000">P-V-F</font> - пометить каждый провод дифф.пары значком <font color="#0000E0">Differential Pair</font> <img src="Diff_pair.png" width="32" height="20" border="1"></li>
+        <li><font color="#FF0000">D-U</font> - обновить информацию на плате</li>
+      </ol>
+    </ul>
+    <ul>
+      <li><font color="#B000B0">Перейти в редактор плат:</font></li>
+      <ol start="4">
+        <li><font color="#FF0000">D-C-Object Classes-Differetial Pair Classes-ПКМ-Add class</font> - создать класс дифф.пары</li>
+        <li><font color="#FF0000">D-R-Design Rules-Differential Pair Routing</font> - создать или отредактировать правило для класса дифф.пары </li>
+        <li style="padding-top: 2px">Провести дифф.пару выбрав иконку <img src="Route_diff_pair.png" width="21" height="20" border="1"> <font color="#0000E0">Intractively Route Differential Pair Connections</font> на панели инструментов</li>
+      </ol>
     </ul>
 
     <div class="hd3">Библиотеки</div>
