@@ -1,0 +1,45 @@
+Altium Designer and pads with drill holes on photomask
+
+Some people use to make PCB at home by method of Laser-Iron-Textolite or the photoresist method. 
+They route an PCB and then print it on paper in b/w. Then PCB is tinned and drilled. 
+It is very easy to drill an PCB if copper pads which are to be drilled already have a hall in the middle. 
+In this way drill is so to say auto-aimed by the borders of solder on copper pad and does not slide out. 
+But it is not so easy to get photomask with hall in pads by means of AD. But it is possible. 
+True way: create two gerber files with bottom and top layers, and drill file. 
+These actions are accessed in PCB mode through File-Fabrication options-[Gerber files, NC Drill Files] . 
+So, we have 3 files. Then, switch to "top" gerber. Go to File-Import-Quick load. 
+Then in the dialog select the path "project_name_Files" and there will be one .txt file "project_name.txt", choose it. 
+Then go to View-Workspace Panels-CamStatic-CamStatic. In CamStatic dialog switch off top layer and drill. 
+Go to Edit-Composite layers-Build Composite. You must set name of new layer lest AD crashes. 
+First layer in list will be the top layer, and the second will be the drill. 
+In Polarity column you select Dark for wire layer and Clear for drill, and go further. 
+That's all. For LIT you mirror resulting layer if it is top when for photoresist method you mirror the bottom. 
+Mirroring is accessed via Tools->Film wizard. 
+
+PS. If you see the haircrosses on drill holes, go to View and select Cam Editor instead of NC Editor.
+
+
+
+
+
+Altium Designer и площадки с отверстиями для сверления на фотошаблоне
+
+Некоторые люди изготавливают печатные платы в домашних условиях методом ЛУТ или методом фоторезиста. 
+Они трассируют печатную плату, а затем печатают ее на бумаге в черно-белом варианте. 
+Затем печатная плата травится и просверливается. 
+Просверлить печатную плату очень просто, если в площадках, которые необходимо просверлить, уже есть углубление посередине. 
+Таким образом, сверло автоматически центрируется на площадке и не соскальзывает. 
+Но получить фотошаблон с углублениями в площадках с помощью AD не так-то просто, но возможно. 
+Верный способ: создайте два файла gerber с нижним и верхним слоями и файлом сверловки. 
+Это можно сделать в режиме печатной платы через Menu-File-Fabrication options-[Gerber files, NC Drill Files]. 
+Итак, у нас есть 3 файла. Затем переключаемся на "верхний" файл gerber. Переходим к файлу-Импорт-Быстрая загрузка. 
+Затем в диалоговом окне выберите путь "project_name_Files", и там будет один .txt-файл "project_name.txt", выберите его. 
+Затем перейдите в раздел "Просмотр"-"Панели рабочей области"- "CamStatic"-"CamStatic". 
+В диалоговом окне "CamStatic" отключите верхний слой и выполните детализацию. 
+Перейдите в меню "Редактировать"- "Составные слои" - "Создать составной слой". 
+Вы должны указать название нового слоя, чтобы реклама не вылетела. Первый слой в списке будет верхним, а второй - детализированным. 
+В столбце Полярность вы выбираете Темный цвет для слоя проволоки и прозрачный для сверления и идете дальше. Вот и все. 
+Для LIT вы зеркально отображаете результирующий слой, если он верхний, в то время как для метода фоторезиста вы зеркально отображаете нижний. 
+Доступ к зеркальному отображению осуществляется через Инструменты->Мастер создания пленки. 
+
+PS. Если вы видите скрещивания на отверстиях для сверления, перейдите в раздел View и выберите Cam Editor вместо NC Editor.

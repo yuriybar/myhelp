@@ -1,0 +1,6 @@
+
+Для настройки штампа:
+Menu/Project/Project Options... вкладка Parameters добавить следующие параметры:
+Global
+
+
