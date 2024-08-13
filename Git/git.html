@@ -1,29 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-<title>Подсказки по GIT</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" href="../question mark.ico" type="image/x-icon">
   <link href="../css.css" type="text/css" rel="stylesheet">
+  <title>Система подсказок</title>
 </head>
 <body>
-<table cellspacing="0" align="center">
-<tbody>
-<tr><td>&nbsp;</td></tr>
-<tr>
-  <td class="top">
-    <div class="nam">Система подсказок v.0.1.</div>
-    <div class="nav"> <a href="../index.html">Содержание</a> - Про GIT </div>
-  </td>
-</tr>
-<tr>
-  <td align="center"><img src="LogoGIT.png">
-    <p><strong><font face="Arial">Описание некоторых возможностей системы контроля версий GIT.</font></strong><BR><BR></p>
-  </td>
-</tr>
-<tr>
-  <td class="txt">
+<div id="back">
+  <div id="top"><img src="LogoGIT.png"></div>
+  <div id="header">Система подсказок v.0.2.&nbsp;</div>
+  <div id="header1">&nbsp;<a href="../index.html">Содержание</a> - Про Git</div>
+  <div id="content">
+    <p>Описание некоторых возможностей системы контроля версий GIT.<BR><BR></p>
    <div class="hd3">Авторизация по ключам ssh</div>
     <ul>
       <li>Запустить bash консоль: ПКМ-Git Bash Here</li>
@@ -35,10 +25,6 @@
       <li>Переключить агента с https на ssh: git remote set-url origin git@github.com:yuriybar/myhelp.git</li>
       <li>Проверить доступ на Github: ssh -T git@github.com</li>
     </ul>
-  </td>
-</tr>
-<tr>
-  <td class="txt">
     <div class="hd3">Настройка GIT</div>
     <ul>
       <li><font color="#FF0000">git config --global user.name "My Name"</font> - Настройка пользователя</li>
@@ -48,20 +34,11 @@
       <li><font color="#FF0000">git config --list</font> - Посмотреть настройки (Для выхода клавиша q)</font></li>
       <li><font color="#FF0000">git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"</font> - Настройка внешнего редактора</font></li>
     </ul>
-  </td>
-</tr>
-<tr>
-  <td class="txt">
     <ul>
       <li><font color="#FF0000">git pull</font> - Получить все изменения с Github</li>
       <li><font color="#FF0000">git status</font> - Отобразит текущее состояние проекта (что изменилось но не сохранено в репозитории)</li>
     </ul>
-  </td>
-</tr>
-<tr>
-  <td class="txt">
 <pre>
-
 # Адрес репозитороия на GitHub:
 git@github.com:yuriybar/myhelp.git
 
@@ -162,20 +139,12 @@ git remote set-url origin git@github.com:yuriybar/myhelp.git
 Обратное переключение при необходимости:
 git remote set-url origin https://github.com/yuriybar/myhelp.git
 </pre>
-  </td>
-</tr>
-<tr>
-  <td class="txt">
     <ul>
       <li><a href="../Git/gitignore.html">Про файл .gitignore</a> - Описание и пример</li>
     </ul>
-  </td>
-</tr>
-<tr>
-  <td class="bot">
-    <div class="nav"> <a href="../index.html">Содержание</a> - Про GIT </div>
-  </td>
-</tr>
-</tbody>
-</table>
-</body></html>
+  </div>
+  <div id="header1">&nbsp;<a href="../index.html">Содержание</a> - Про Git</div>
+  <br><br>
+</div>
+</body>
+</html>
