@@ -1,28 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <title>Altium</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" href="../question mark.ico" type="image/x-icon">
   <link href="../css.css" type="text/css" rel="stylesheet">
+  <title>Система подсказок</title>
 </head>
 <body>
-<table cellspacing="0" align="center">
-<tbody>
-<tr><td>&nbsp;</td></tr>
-<tr><td class="top"> <img src="ad13.jpg" border="0"></td></tr>
-<tr>
-  <td class="top">
-    <div class="nam">Система подсказок v.0.1.</div>
-    <div class="nav"> <a href="../index.html">Содержание</a> - Altium designer </div>
-  </td>
-</tr>
-<tr>
-  <td class="txt">
-    <p>Знак плюс (<font color="#FF0000">+</font>) в описании клавиш означает одновременное их нажатие.<br></p>
-    <p>Знак минус (<font color="#FF0000">-</font>) в описании клавиш означает, что необходимо нажимать их по порядку.<br></p>
-    <p><font color="#FF0000">ЛКМ</font> и <font color="#FF0000">ПКМ</font> - соответственно Левая и Правая Кнопка Мыши<br></p>
+<div id="back">
+  <div id="top"><img src="ad13.jpg" width="100%"></div>
+  <div id="header">Система подсказок v.0.2.&nbsp;</div>
+  <div id="header1">&nbsp;<a href="../index.html">Содержание</a> - Altium designer</div>
+  <div id="content">
+
+    <p>Знак плюс (<span class="t_red">+</span>) в описании клавиш означает одновременное их нажатие.</p>
+    <p>Знак минус (<span class="t_red">-</span>) в описании клавиш означает, что необходимо нажимать их по порядку.</p>
+    <p><span class="t_red">ЛКМ</span> и <span class="t_red">ПКМ</span> - соответственно Левая и Правая Кнопка Мыши</p>
+
     <div class="hd4">Общее</div>
     <ul>
       <li><font color="#0000E0">DXP/Preference</font> - Общие настройки здесь</li>
@@ -34,7 +29,7 @@
       <li><font color="#FF0000">T-C</font> - Cross probe. Нажимать на <font color="#FF0000">Ctrl+ЛКМ</font> чтобы перейти на плату или схему соответственно</li>
       <li><font color="#FF0000">V-F</font> - Масштаб на всю плату или схему</li>
       <li><font color="#FF0000">V-W</font> - Выбор отображаемых панелей</li>
-      <li>Относительные пути в папке проекта например .\Backup\ для автосохранения <br> настраиваются в <font color="#0000E0">DXP/Preferences/Data Menegment/Backup/Path</font></li>
+      <li>Относительные пути в папке проекта например .\Backup\ для автосохранения настраиваются в <font color="#0000E0">DXP/Preferences/Data Menegment/Backup/Path</font></li>
       <li>Спецификация в GOST_BOM 2.0 генерируется из редактора платы <font color="#0000E0">Menu/Reports/GOST BOM/Make specification</font></li>
       <li>Для перемещения панелей тянуть нужно именно за текст в заголовке</li>
       <li>Чтобы панели не фрактализировались поставить галочку - <font color="#0000E0">DXP/Preferences/System/General/Advanced.../UI.DisableFractalMode</font> и перезагрузить Altium</li>
@@ -51,8 +46,7 @@
       <li><font color="#FF0000">T-L</font> - Обновление из библиотеки <font color="#0000E0">(Menu\Tools\Update From Libraries)</font></li>
       <li><font color="#FF0000">P-W</font> - Соединение. <font color="#FF0000">Shift+Space</font> - меняет режим угла проводника 90 - 45 - Any</li>
       <li style="padding-top: 2px">Подсветка цепей в SCH - нажать на иконку с карандашом <img src="Net_color.png" width="35" height="20" border="1"> и выбрать цепь</li>
-      <li>Символ надчеркивания в цепях - Либо ПОСЛЕ каждой буквы вставить <font color="#0000E0">\</font> , 
-    либо ПЕРЕД всем текстом и включить <font color="#0000E0">DXP/Preferences/Schematic/Grafical Editing/Single `\` Negation</font></li>
+      <li>Символ надчеркивания в цепях - Либо ПОСЛЕ каждой буквы вставить <font color="#0000E0">\</font> , либо ПЕРЕД всем текстом и включить <font color="#0000E0">DXP/Preferences/Schematic/Grafical Editing/Single `\` Negation</font></li>
       <li>Настройка примитивов по умолчанию - <font color="#0000E0">DXP/Preferences/Schematic/Default Primitives</font></li>
       <li>Выделение на плате элементов, выделенных на схеме – после выделения элементов на принципиальной схеме, 
     <font color="#FF0000">ПКМ – Part Action – Select PCB Components</font> или выделить - <font color="#FF0000">T-S</font>. 
@@ -114,6 +108,7 @@
       <li><font color="#0000E0">Tools/Remove unused pad shapes...</font> - Для удаления неиспользованных пятачков на внутренних слоях</li>
       <li>Ненужные в текущей плате правила можно отключать, сняв галочку в колонке <font color="#FF0000">Enable</font></li>
       <li>Вырез в плате: <font color="#FF0000">T-V-B</font> - выделить нужный контур и нажать комбинацию клавиш (<font color="#0000E0">Menu/Tools/Convert/Create Board Cutout from Selected Primitives</font>)</li>
+      <li>Чтобы при редактировании дорожки не рвались, а перетаскивались выберите <font color="#0000E0">DXP/PCB Editor/Interactive Routing/Dragging/Selected via/track - Drag</font></li>
     </ul>
 
     <div class="hd3">Полигоны</div>
@@ -224,16 +219,17 @@
     
     <div class="hd3">Room</div>
     <p> Альтиум позволяет объединять компоненты в группы, сопоставляя каждой группе свою область размещения – Room. Определить Room можно как из схемы, так и прямо на печатной плате.</p>
-    <p> Определение из принципиальной схемы. <BR>По умолчанию, Альтиум предлагает с каждого листа принципиальной схемы создавать свою область размещения. <BR>Кроме того, возможно создание областей размещения для компонентов, имеющих одинаковый класс (Component Class). Режимы создания областей размещения определяются положением галочек в Project Options, на закладке Class Generation. Окно «Project Options» можно вызвать из меню «Project» (при работе в схемном редакторе).</p>
-    <p> Определение в редакторе печатных плат. <BR>Выделяем необходимые компоненты, затем Design/Rooms/Create <несколько вариантов> Room from selected component.<BR>
+    <p> <font color="#B000B0">Определение из принципиальной схемы:</font><BR>По умолчанию, Альтиум предлагает с каждого листа принципиальной схемы создавать свою область размещения. <BR>Кроме того, возможно создание областей размещения для компонентов, имеющих одинаковый класс (Component Class). Режимы создания областей размещения определяются положением галочек в Project Options, на закладке Class Generation. Окно «Project Options» можно вызвать из меню «Project» (при работе в схемном редакторе).</p>
+    <p> <font color="#B000B0">Определение в редакторе печатных плат:</font><BR>Выделяем необходимые компоненты, затем <font color="#0000E0">Menu/Design/Rooms/Create <несколько вариантов> Room from selected component.</font><BR>
     Созданная область размещения передвигается по плате вместе с составляющими ее компонентами. При вынесении какого-нибудь из компонентов за пределы области, и область и компонент 
     подсвечиваются зеленым цветом, что сигнализирует об ошибке. Это верно для того случая, когда созданная область размещения имеет свойство «Keep component Inside» - держать элементы внутри. 
-    С точностью до наоборот работает свойство «Keep component Outside».
-    Если комнаты в проекте не нужны, в меню Project->Option на закладке Class Generation надо снять галки в поле [Generate Rooms].</p>
-    
+    С точностью до наоборот работает свойство «Keep component Outside».</p>
+    <p> Если комнаты в проекте не нужны, в <font color="#0000E0">Menu/Project->Option</font> на закладке <font color="#0000E0">Class Generation</font> надо снять галки в поле <font color="#0000E0">[Generate Rooms]</font>.</p>
+    <p> Чтобы изменить или посмотреть свойства комнаты нужно включить режим одного слоя (<font color="#FF0000">Shift+S</font>) и <font color="#FF0000">ПКМ/Properties...</font> на нужной комнате.</p>
+
     <div class="hd3">Импорт из PCAD</div>
     <ul>
-      <li>File/Import Wizard</li>
+      <li>Импорт из других CAD делается через вызов мастера <font color="#0000E0">Menu/File/Import Wizard</font></li>
     </ul>
     
     <div class="hd3">Горячие клавиши</div>
@@ -272,13 +268,10 @@
       <li><a href="http://cad-design.ru/downloads/library.html">cad-design.ru</a></li>
       <li><a href="http://www.tracepartsonline.net/">www.tracepartsonline.net</a></li>
     </ul>
-  </td>
-</tr>
-<tr>
-  <td class="bot">
-    <div class="nav"> <a href="../index.html">Содержание</a> - Altium designer </div>
-  </td>
-</tr>
-</tbody></table>
+
+  </div>
+  <div id="header1">&nbsp;<a href="../index.html">Содержание</a> - Altium designer</div>
+<br><br>
+</div>
 </body>
 </html>
