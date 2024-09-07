@@ -150,6 +150,19 @@
       <li>Настройка отображения Designator в библиотеке УГО находятся в <span class="t_blue">Menu/Tools/Document Options.../Show Comment/Designator</span></li>
     </ul>
 
+    <div class="hd4">Использование GOST BOM для оформления документации</div>
+    <ul>
+      <li>Настройка выпадающих списков производится в файле <span class="t_blue">c:\ProgramData\Altium\Altium Designer {какой-то номер}\Extensions\GOST BOM\Settings.xml</span></li>
+      <li>Перед выводом проверьте заполнение свойств проекта в соотвествие с применённым шаблоном</li>
+      <li>Для шаблона <span class="t_purple">A3_420x297_Form_1_My</span> необходимо заполнить поля аналогично рисунку:</li>
+      <p><img src="GOST_BOM.png" width="97%" border="1"></p>      
+      <li>Далее в свойствах листа схемы - панель <span class="t_blue">Properties</span>, на вкладке <span class="t_blue">Parameters</span> добавить следующие параметры:</li>
+      <li><span class="t_blue">CompanyName</span> - ООО "НЭК ТЕХ"</li>
+      <li><span class="t_blue">Вид_документа_SCH</span> - Схема электрическая принципиальная</li>
+      <li>Проверить и при необходимости исправить количество листов схемы, параметры - <span class="t_blue">SheetNumber</span> и <span class="t_blue">SheetTotal</span></li>
+      <li>Вывод производится через пункты подключенного к проекту файла: <span class="t_purple">OutJob.OutJob</span></li>
+    </ul>
+
     <div class="hd3">Прочее</div>
     <ul>
       <li>Если при трансляции схемы не находится footprint, можно воспользоваться<span class="t_blue"> Tools/Footprint Manager </span>, выбрать Edit... и указать PCB Library - Any</li>
