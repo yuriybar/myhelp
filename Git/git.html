@@ -19,7 +19,7 @@
       <li>Запустить bash консоль: ПКМ-Git Bash Here</li>
       <li>Сгенерировать пару ключей, приватный и публичный: ssh-keygen</li>
       <li>Сохранить их, например в домашнюю папку: c:/Users/user_name/.ssh/</li>
-      <li>Добавить публичный ключ на Github (<a href="https://github.com/settings/keys">https://github.com/settings/keys</a>)</li>
+      <li>Добавить публичный ключ на Github (<a href="https://github.com/settings/keys"><span class="t_blue">https://github.com/settings/keys</span></a>)</li>
       <li>Запустить ssh agent командой: eval "$(ssh-agent -s)"</li>
       <li>Добавить приватный ключ указав путь к нему: ssh-add ~/.ssh/id_rsa</li>
       <li>Переключить агента с https на ssh: git remote set-url origin git@github.com:yuriybar/myhelp.git</li>
@@ -27,27 +27,34 @@
     </ul>
     <div class="hd3">Настройка GIT</div>
     <ul>
-      <li><font color="#FF0000">git config --global user.name "My Name"</font> - Настройка пользователя</li>
-      <li><font color="#FF0000">git config --global user.email myEmail@example.com</font> - Настройка email</li>
-      <li><font color="#FF0000">git config credential.helper store</font> - Чтобы сохранялся пароль</li>
-      <li><font color="#FF0000">git config --unset credential.helper</font> - Обнулить настройки этой возможности можно командой</li>
-      <li><font color="#FF0000">git config --list</font> - Посмотреть настройки (Для выхода клавиша q)</font></li>
-      <li><font color="#FF0000">git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"</font> - Настройка внешнего редактора</font></li>
+      <li>Адрес репозитороия на GitHub: <span class="t_purple">git@github.com:yuriybar/myhelp.git</span></li>
+      <li><span class="t_red">git config --global user.name "My Name"</span> - добавить пользователя (yuriybar)</li>
+      <li><span class="t_red">git config --global user.email myEmail@example.com</span> - установить email (????????@mail.ru)</li>
+      <li><span class="t_red">git config credential.helper store</span> - чтобы сохранялся пароль</li>
+      <li><span class="t_red">git config --unset credential.helper</span> - обнулить настройку сохранения пароля можно этой командой</li>
+      <li><span class="t_red">git config --list</span> - посмотреть настройки (Для выхода клавиша q)</li>
+      <li><span class="t_red">git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"</span> - настройка внешнего редактора</li>
+      <li><span class="t_red">git remote -v</span> - показать адреса удаленных репозиториев</li>
     </ul>
+    <div class="hd3">Разное GIT</div>
     <ul>
-      <li><font color="#FF0000">git pull</font> - Получить все изменения с Github</li>
-      <li><font color="#FF0000">git status</font> - Отобразит текущее состояние проекта (что изменилось но не сохранено в репозитории)</li>
+      <li><span class="t_red">git status</span> - отобразить текущее состояние проекта (что изменилось, но не сохранено в репозитории)</li>
+      <li><span class="t_red">git init</span> - создать локальный репозиторий в текущем каталоге</li>
+      <li><span class="t_red">git init --bare</span> - создать репозиторий без рабочей копии</li>
+      <li><span class="t_red">git pull</span> - получить все изменения из удаленного репозитория (Github)</li>
+      <li><span class="t_red">git add .</span> - добавить файлы под контроль Git</li>
+      <li><span class="t_red">git commit -a</span> - сохранить изменения в локальном репозитории с комментированием в текстовом редакторе</li>
+      <li><span class="t_red">git commit -m 'Здесь комментарий'</span> - сохранить изменения в локальном репозитории с комментарием</li>
+      <li><span class="t_red">git restore &lt;file&gt;</span> - отменить изменения файла в рабочей директории</li>
+      <li><span class="t_red">git push</span> - отправить все изменения в удаленный репозиторий (на Github)</li>
     </ul>
 <pre>
-# Адрес репозитороия на GitHub:
-git@github.com:yuriybar/myhelp.git
-
 ***
+
 Чтобы удалить директорию из репозитория просто удаляете директорию стандартными методами ОС, а затем делаете:
 git add .
 и
 git commit -m 'Удалена директория folder'
-
 Ну и отправляете новый код на сервер, соответственно: 
 git push
 
@@ -126,7 +133,7 @@ git config --bool core.bare true
 Добавить ключи:
 ssh-add ~/.ssh/id_rsa
 
-Проверить статус репозитория:
+Проверить статус удаленного репозитория:
 git remote -v
 
 Проверка доступа на Github:
