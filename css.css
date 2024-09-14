@@ -59,8 +59,8 @@ padding-top: 5px;
 padding-bottom: 5px;
 }
 a:link     { color: #0055BB; text-decoration: underline; }
-a:visited  { color: #000066; text-decoration: underline; }
-a:active   { color: #000066; text-decoration: underline; }
+a:visited  { color: #0055BB; text-decoration: underline; }
+a:active   { color: #00A066; text-decoration: underline; }
 a:hover    { color: #CC3333; text-decoration: underline; }
 ul { TEXT-ALIGN: left; TEXT-INDENT: 0px; PADDING-BOTTOM: 2px; }
 li { PADDING-TOP: 10px; }
@@ -77,3 +77,4 @@ ol { TEXT-ALIGN: left; TEXT-INDENT: 0px; }
 .t_red { color: #ff0000; }
 .t_purple { color: #b000b0; }
 .t_green { color: #00a000; }
+.t_bold { font-weight: bold; }
