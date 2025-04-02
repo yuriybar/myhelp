@@ -1,393 +1,149 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+<head>
 <meta charset="UTF-8">
+<link href="css.css" type="text/css" rel="stylesheet">
 <title>Altium Designer 19 — советы и фишки, упрощающие проектирование — A_D Electronics</title>
 </head>
 <body>
-
-		<div class="entry-meta">
-
-		<h1 class="entry-title">Altium Designer 19 — советы и фишки, упрощающие&nbsp;проектирование</h1>	</header>
-
-	<div class="entry-content">
+<div id="back">
+	<div id="content">
+		<div class="hd1">Altium Designer 19 — советы и фишки, упрощающие&nbsp;проектирование</div>
+		<p>Наконец-то я собрался написать по Альтиуму что-то по объёму более, чем заметка со ссылкой на видосик. :) Материал ниже — это сборник советов или просто фишек как нового 19-го Альтиума, так и прошлых версий. Думаю, это будет интересно как начинающему радиолюбителю, так и инженеру, уже давно работающему с Альтиумом.</p>
+		<p>Статья разбита по отдельным советам\фишкам, начинается с верхушки (проект и схемотехника) и далее переходит по следующим ступеням (печатная плата, сборка плат) сквозного проектирования.</p>
+		<p>Начнём с самого простого и не всегда популярного почему-то (видел, что далеко не все этим пользуются или даже не знают об этих инструментах):</p>
 		
-<p data-adtags-visited="true">Наконец-то я собрался написать по Альтиуму что-то по объёму более, чем заметка со&nbsp;<a href="https://adelectronics.ru/2018/12/03/%d0%bd%d0%be%d0%b2%d1%8b%d0%b5-%d0%b2%d0%be%d0%b7%d0%bc%d0%be%d0%b6%d0%bd%d0%be%d1%81%d1%82%d0%b8-altium-designer-19/">ссылкой на видосик</a>. :) Материал ниже — это сборник советов или просто фишек как нового 19-го Альтиума, так и прошлых версий. Думаю, это будет интересно как начинающему радиолюбителю, так и инженеру, уже давно работающему с Альтиумом.</p>
+		<h3>Глобальное обновление количества листов схемы и их нумерация</h3>
+		<p>Инструмент <strong>Number Schematic Sheets…</strong> находится в меню <strong>Tools</strong>-&gt;<strong>Annotation</strong>:</p>
+		<img src="b81-1.png" alt="b81-1">
+		<p>Выглядит он следующим образом:</p>
+		<img src="b81-2.png" alt="b81-2">
+		<p>Как можно видеть, в открытом проекте 4 листа схемы и общее количество листов (колонка <strong>SheetTotal</strong>) = 3, а также номера конкретных листов (колонка <strong>SheetNumber</strong>) не соответствуют фактическому количеству\позиции листа. Для автоматического назначения обоих параметров внизу нажимаем две кнопки (<strong>Auto Sheet Number</strong> и <strong>Update Sheet Count</strong>):</p>
+		<img src="b81-3.png" alt="b81-3">
+		<p>После чего можно видеть вносимые изменения (помечены синими треугольниками на изменённых ячейках таблицы). Также можно вручную подкорректировать и внести изменения на листы путём нажатия кнопки <strong>ОК</strong>.</p>
+		<p>Результат:</p>
+		<img src="b81-4.png" alt="b81-4">
+		
+		<h3>Быстрое обновление или замена компонентов в схеме</h3>
+		<p>Следующий инструмент удобен для быстрого и глобального обновления\замены компонентов простых типов, к примеру, используемые вами конденсаторы заимели статус <strong>NRND</strong> (Not Reccomend to New Designs), вы нашли замену, а свежий проект у вас на 5-10 листов схемы, а этих конденсаторов там сотни. Что делать? Да всё просто, используем инструмент <strong>Update From Libraries…</strong> (предварительно занеся новый тип конденсаторов в библиотеку компонентов, конечно же) из меню <strong>Tools</strong>:</p>
+		<img src="b81-5.png" alt="b81-5">
+		<p>Открывается следующее окно:</p>
+		<img src="b81-6.png" alt="b81-6">
+		<p>Здесь можно выбрать листы проекта, типы компонентов, которые будем обновлять или заменять. Далее происходит проверка наличия выбранных компонентов в библиотеке, и если их нет, будет отображен статус <strong>Not Found</strong>. На скриншоте ниже я уже выбрал новые конденсаторы взамен старых (кроме последнего, выделенного):</p>
+		<img src="b81-7.png" alt="b81-7">
+		<p>На примере последнего замена делается легко — просто выделяем строку с нужным компонентов (или группой, Ctrl+ и Shift+ здесь работают) и нажимаем ПКМ, выбираем <strong>Choose Component…</strong> :</p>
+		<img src="b81-8.png" alt="b81-8">
+		<p>Далее вручную или поиском по <strong>Part Number</strong> находим нужную замену:</p>
+		<img src="b81-9.png" alt="b81-9">
+		<p>Теперь слева можно отметить только те компоненты, которые мы хотим обновить\заменить, а справа, сняв галочку <strong>Full Replace,</strong> можно также выбрать, обновлять ли графическое представление, параметры и\или модели. Более того, выделив компоненты и нажав кнопку внизу&nbsp;<strong>Parametrs Changes…</strong> :</p>
+		<img src="b81-10.png" alt="b81-10">
+		<p>Можно увидеть в открывшемся окне все параметры компонентов (по колонкам) с отметками, какие будут изменены (синий треугольник), какие удалены (красный минус), а какие добавлены (зелёный плюс):</p>
+		<img src="b81-11.png" alt="b81-11">
+		<p>Также можно отменить изменения, выделяем нужные ячейки (у меня, к примеру, на схеме вручную для некоторых компонентов был добавлен параметр ClassName со значением DirectConnect) и нажимаем ПКМ, выбираем пункт <strong>Reject</strong>:</p>
+		<img src="b81-12.png" alt="b81-12">
+		<p>Теперь эти параметры не будут удаляться:</p>
+		<img src="b81-13.png" alt="B81-13">
+		<p>После чего можно успешно обновить компоненты на схеме кнопкой <strong>Finish</strong> из главного окна инструмента <strong>Update From Libraries</strong>. Результат обновления будет выведен в отдельном окне:</p>
+		<img src="b81-14.png" alt="b81-14">
+
+		<h3>Глобальные параметры проекта и их использование</h3>
+		<p>Далеко не все пользуются глобальными параметрами проекта, которые работают на весь проект и позволяют задавать номера, ID или имена для автоматической подстановки как на схеме, так и на плате, и даже при генерации документации.</p>
+		<p>Находятся они в опциях проекта:</p>
+		<img src="b81-15.png" alt="b81-15">
+		<p>Вкладка <strong>Parametrs</strong>:</p>
+		<img src="b81-16.png" alt="b81-16">
+		<p>Здесь можно объявить идентификационный номер проекта, его имя, идентификационный номер платы и ревизию проекта. К примеру, объявлен параметр&nbsp;<strong>PCB_ID</strong>&nbsp;— идентификационный номер платы. И его можно использовать для автоматической подстановки в качестве сокращённого номера печатной платы на верхнем и нижнем слоях таким способом (свойства обычного текста на любом слое):</p>
+		<img src="b81-20.png" alt="b81-20">
+		<p>Выглядит на плате это так (текст на верхнем слое меди):</p>
+		<img src="b81-19.png" alt="b81-19">
+		<p>Тут кстати видна одна небольшая фишка культуры разработки печатной платы — дата проектирования.<br>Состоит она из последних 2 цифр года и&nbsp;<a href="https://xn--d1ababprchchy.xn--p1ai/">номера недели</a>&nbsp;на момент завершения проектирования и разводки печатной платы (на скриншоте выше: <strong>1911</strong>).</p>
+		<p>Также глобальные параметры можно использовать, к примеру, в Draftsman. Опять же инструмент текст, а его значение составляем из двух параметров проекта:</p>
+		<img src="b81-18.png" alt="b81-18">
+		<p><em>Примечание:&nbsp;В плате параметры указываются через . (точку), а в Draftsman они вставляются через = (равно).</em></p>
+		<p>И теперь, накидав простой сборочный чертёж для пайки прототипа, вставить текст с номерами проекта и платы:</p>
+		<img src="b81-17.png" alt="b81-17">
+		<p>Ещё одно место, где удобно использовать глобальные параметры проекта — это файлы OutJob. Смотрите, делаем задачи по генерации документации:</p>
+		<img src="b81-21.png" alt="b81-21">
+		<p>А в настройках задачи можно подставлять параметры проекта:</p>
+		<img src="b81-22.png" alt="b81-22">
+		<p>Таким образом, файл сразу генерируется с именем, соответствующим текущему идентификационному номеру проекта, содержанию файла и ревизии.</p>
+		
+		<h3>Классы цепей (Net Class и Diff. Pair Net Class) и правила для них</h3>
+		<p>Инструмент <strong>Parametr Set</strong> используется обычно для установки правил на группу или одиночную цепь:</p>
+		<img src="b81-23.png" alt="b81-23">
+		<p>К примеру, можно задать для группы цепей правило на допустимую разницу величины всех длин цепей в пределах группы:</p>
+		<img src="b81-25.png" alt="b81-25">
+		<p>А также в свойствах этого инструмента содержится и колонка с именем класса, к которому будет относится цепь или группа цепей:</p>
+		<img src="b81-24.png" alt="b81-24">
+		<p>Более того, в инструменте определения дифференциальной пары — <strong>Differential Pair</strong>:</p>
+		<img src="b81-26.png" alt="B81-26">
+		<p>Также есть колонка с именем класса, к которому будет относиться эта дифференциальная пара:</p>
+		<img src="b81-27.png" alt="B81-27">
+		<p>Как можно заметить выше, классы для одиночных цепей и дифференциальных пар имеют различные типы, это удобно при создании правил.</p>
+		<p>Вот можно видеть правило, созданное инструментом <strong>Parametr Set</strong> из схемы (с припиской <strong>Schematic *</strong> в имени правила):</p>
+		<img src="b81-28.png" alt="b81-28">
+		<p>А вот правила, созданные вручную для конкретного класса:</p>
+		<img src="b81-29.png" alt="B81-29">
+		<p>Более того, во втором правиле толщины и зазоры дифференциальной пары берутся из профиля импеданса <strong>D100</strong>&nbsp;(про который будет рассказано далее):</p>
+		<img src="b81-30.png" alt="B81-30">
+		<p>Основное отличие же — это создание правил для платы двумя основными путями:</p>
+		<ol>
+			<li>На схеме, в свойствах инструментов <strong>Parametr Set</strong> или <strong>Differential Pair</strong>. В этом случае всё, вроде бы, удобно (задаём всё на схеме и далее уже не паримся) и по канону САПР — полностью сквозное проектирование, но если у вас куча однотипных цепей и для каждой стоит <strong>Parametr Set</strong>, то будет создано столько же и правил, несмотря на то, что они могут быть полностью идентичны (ещё бывает баг, что при импорте изменений из схемы в плату все правила, созданные таким путём, Альтиум как бы пересоздаёт, удаляя все текущие и добавляя их заново).</li>
+			<li>В параметрах платы создаём правила для различных типов классов и соответствующих имён, а в схеме цепи присваиваем конкретным классам и не более. В этом случае для всех однотипных цепей будет только одно правило (по имени класса), не будет дубликатов правил (как и возможного бага с постоянным перезаписыванием правил).</li>
+		</ol>
+		<p><em>Примечание:&nbsp;Нельзя однозначно сказать, что удобен всегда тот или иной путь, выбор, как создавать правила, необходимо делать в зависимости от задачи или ваших предпочтений. :)</em></p>
+
+		<h3>Инструмент Smart Paste</h3>
+		<p>Этот инструмент следует использовать, если у вас много однотипных объектов. Находится он здесь:</p>
+		<img src="b81-93.png" alt="B81-93">
+		<p>И наглядно увидеть, что с его помощью можно сделать, можно на гифке ниже:</p>
+		<img src="b81-94.gif" alt="b81-94">
+		<p>Здесь я взял группу Net Labels, относящихся к I2S, и с помощью Smart Paste я могу их вставить как такую же группу, но другого типа объектов (порты, шина Harness, просто текст и т. д.), что может значительно ускорить проектирование схемы.</p>
+
+		<h3>Правила технологических возможностей производства</h3>
+		<p>Этот раздел с правилами, скорее, для совсем новичков, но решил, что стоит описать его для тех, кто первых раз будет проектировать свою печатную плату и делать потом заказ на производстве.</p>
+		<p>Итак, вначале нам надо определиться, где мы хотим изготавливать печатную плату, и посмотреть, что завод-изготовитель может сделать. Возьмем для примера <a href="https://www.rezonit.ru/support/technology/urgent/index.php">технологические возможности от Резонита</a>. Для печатной платы с 18 мкм толщиной фольги и коэффициентом стоимости 1.5 (более сложное изготовление в сравнении со стандартным) можно отметить следующие основные параметры:</p>
+		<ul>
+			<li>Металлизированное отверстие = 0,2 мм</li>
+			<li>Поясок площадки переходного отверстия = 0,1 мм</li>
+		</ul>
+		<p>Эти два пункта взаимосвязаны и необходимо задать минимально-возможные значения для переходного отверстия (отверстие собственно = 0,2 мм, а внешний диаметр = 0,2 + 2 * 0,1 = 0,4 мм):</p>
+		<img src="b81-31.png" alt="B81-31">
+		<ul>
+			<li>Поясок монтажной контактной площадки = 0,15 мм</li>
+		</ul>
+		<p>Аналогично необходимо сделать и для контактных площадок.</p>
+		<ul>
+			<li>Проводник на внешних слоях = 0,1 мм</li>
+		</ul>
+		<p>Здесь всё просто, это минимально возможная толщина дорожки (максимальную стоит задавать в разумных пределах, исходя из величин токов на вашей плате):</p>
+		<img src="b81-92.png" alt="B81-92">
+		<ul>
+			<li>Зазор между проводниками на внешних слоях = 0,1 мм</li>
+		</ul>
+		<p>Здесь также всё просто — это минимальный зазор между любыми токопроводящими дорожками\полигонами\заливками:</p>
+		<img src="b81-32.png" alt="B81-32">
+		<p><em>Примечание:&nbsp;Стоит учитывать, что когда вы делаете выравнивание длин «змейкой» или любым другим способом, то зазор в пределах одной цепи по отношению самой к себе стоит делать немного больше этого, иначе возможна ситуация, когда производство вытравит плату, тестером замыканий между различными цепями не будет, зато возможны замыкания как раз в пределах одной цепи на «змейке».</em></p>
+		<ul>
+			<li>Масочный мостик между контактными площадками = 0,1 мм</li>
+		</ul>
+		<p>Тоже ничего сложного, просто минимальное расстояние между двумя масками (к примеру, на падах QFN корпуса):</p>
+		<img src="b81-33.png" alt="B81-33">
+		<ul>
+			<li>Припуск паяльной маски = 0,025 мм</li>
+		</ul>
+		<p>Насколько пад дополнительно открыт от маски относительно базового пада:</p>
+				
+
+	</div>
+</div>	  
+
+
+=============================<BR><BR><BR></BR></BR></BR>
 
-<p data-adtags-visited="true">Статья разбита по отдельным советам\фишкам, начинается с верхушки (проект и схемотехника) и далее переходит по следующим ступеням (печатная плата, сборка плат) сквозного проектирования.</p>
 
-<p data-adtags-visited="true">Начнём с самого простого и не всегда популярного почему-то (видел, что далеко не все этим пользуются или даже не знают об этих инструментах):</p>
 
-<h2>Глобальное обновление количества листов схемы и их нумерация</h2>
 
-<p data-adtags-visited="true">Инструмент <strong>Number Schematic Sheets…</strong> находится в меню <strong>Tools</strong>-&gt;<strong>Annotation</strong>:</p>
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8471" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-1/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-1.png" data-orig-size="568,399" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-1" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-1.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-1.png?w=568" src="b81-1.png" alt="B81-1" class="wp-image-8471"></figure></div>
-
-<p data-adtags-visited="true">Выглядит он следующим образом:</p>
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8472" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-2/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-2.png" data-orig-size="814,517" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-2" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-2.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-2.png?w=700" src="b81-2.png" alt="B81-2" class="wp-image-8472"></figure></div>
-
-<p data-adtags-visited="true">Как можно видеть, в открытом проекте 4 листа схемы и общее количество листов (колонка <strong>SheetTotal</strong>) = 3, а также номера конкретных листов (колонка <strong>SheetNumber</strong>) не соответствуют фактическому количеству\позиции листа. Для автоматического назначения обоих параметров внизу нажимаем две кнопки (<strong>Auto Sheet Number</strong> и <strong>Update Sheet Count</strong>):</p>
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8473" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-3/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-3.png" data-orig-size="814,517" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-3" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-3.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-3.png?w=700" src="b81-3.png" alt="B81-3" class="wp-image-8473"></figure></div>
-
-
-
-<p class="inline-ad-slot" id="inline-ad-0" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">После чего можно видеть вносимые изменения (помечены синими треугольниками на изменённых ячейках таблицы). Также можно вручную подкорректировать и внести изменения на листы путём нажатия кнопки <strong>ОК</strong>.</p>
-
-
-
-<p data-adtags-visited="true">Результат:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8474" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-4/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-4.png" data-orig-size="554,257" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-4" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-4.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-4.png?w=554" src="b81-4.png" alt="B81-4" class="wp-image-8474"></figure></div>
-
-
-
-<h2>Быстрое обновление или замена компонентов в схеме</h2>
-
-
-
-<p data-adtags-visited="true">Следующий инструмент удобен для быстрого и глобального обновления\замены компонентов простых типов, к примеру, используемые вами конденсаторы заимели статус <strong>NRND</strong> (Not Reccomend to New Designs), вы нашли замену, а свежий проект у вас на 5-10 листов схемы, а этих конденсаторов там сотни. Что делать? Да всё просто, используем инструмент <strong>Update From Libraries…</strong> (предварительно занеся новый тип конденсаторов в библиотеку компонентов, конечно же) из меню <strong>Tools</strong>:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8475" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-5/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-5.png" data-orig-size="253,390" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-5" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-5.png?w=195" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-5.png?w=253" src="b81-5.png" alt="B81-5" class="wp-image-8475"></figure></div>
-
-
-
-<p data-adtags-visited="true">Открывается следующее окно:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8476" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-6/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-6.png" data-orig-size="1513,1074" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-6" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-6.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-6.png?w=700" src="b81-6.png" alt="B81-6" class="wp-image-8476"></figure></div>
-
-
-
-<p class="inline-ad-slot" id="inline-ad-1" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Здесь можно выбрать листы проекта, типы компонентов, которые будем обновлять или заменять. Далее происходит проверка наличия выбранных компонентов в библиотеке, и если их нет, будет отображен статус <strong>Not Found</strong>. На скриншоте ниже я уже выбрал новые конденсаторы взамен старых (кроме последнего, выделенного):</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8477" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-7/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-7.png" data-orig-size="1513,1074" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-7" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-7.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-7.png?w=700" src="b81-7.png" alt="B81-7" class="wp-image-8477"></figure></div>
-
-
-
-<p data-adtags-visited="true">На примере последнего замена делается легко — просто выделяем строку с нужным компонентов (или группой, Ctrl+ и Shift+ здесь работают) и нажимаем ПКМ, выбираем <strong>Choose Component…</strong> :</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8478" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-8/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-8.png" data-orig-size="836,174" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-8" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-8.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-8.png?w=700" src="b81-8.png" alt="B81-8" class="wp-image-8478"></figure></div>
-
-
-
-<p data-adtags-visited="true">Далее вручную или поиском по <strong>Part Number</strong> находим нужную замену:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8479" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-9/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-9.png" data-orig-size="1024,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-9" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-9.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-9.png?w=700" src="b81-9.png" alt="B81-9" class="wp-image-8479"></figure></div>
-
-
-
-<p class="inline-ad-slot" id="inline-ad-2" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Теперь слева можно отметить только те компоненты, которые мы хотим обновить\заменить, а справа, сняв галочку <strong>Full Replace,</strong> можно также выбрать, обновлять ли графическое представление, параметры и\или модели. Более того, выделив компоненты и нажав кнопку внизу&nbsp;<strong>Parametrs Changes…</strong> :</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8480" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-10/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-10.png" data-orig-size="1513,1074" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-10" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-10.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-10.png?w=700" src="b81-10.png" alt="B81-10" class="wp-image-8480"></figure></div>
-
-
-
-<p data-adtags-visited="true">Можно увидеть в открывшемся окне все параметры компонентов (по колонкам) с отметками, какие будут изменены (синий треугольник), какие удалены (красный минус), а какие добавлены (зелёный плюс):</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8481" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-11/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-11.png" data-orig-size="966,565" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-11" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-11.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-11.png?w=700" src="b81-11.png" alt="B81-11" class="wp-image-8481"></figure></div>
-
-
-
-<p data-adtags-visited="true">Также можно отменить изменения, выделяем нужные ячейки (у меня, к примеру, на схеме вручную для некоторых компонентов был добавлен параметр ClassName со значением DirectConnect) и нажимаем ПКМ, выбираем пункт <strong>Reject</strong>:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8482" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-12/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-12.png" data-orig-size="271,363" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-12" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-12.png?w=224" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-12.png?w=271" src="b81-12.png" alt="B81-12" class="wp-image-8482"></figure></div>
-
-
-
-<p data-adtags-visited="true">Теперь эти параметры не будут удаляться:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8483" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-13/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-13.png" data-orig-size="966,565" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-13" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-13.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-13.png?w=700" src="b81-13.png" alt="B81-13" class="wp-image-8483"></figure></div>
-
-
-
-<p data-adtags-visited="true">После чего можно успешно обновить компоненты на схеме кнопкой <strong>Finish</strong> из главного окна инструмента <strong>Update From Libraries</strong>. Результат обновления будет выведен в отдельном окне:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8484" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-14/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-14.png" data-orig-size="1117,548" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-14" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-14.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-14.png?w=700" src="b81-14.png" alt="B81-14" class="wp-image-8484"></figure></div>
-
-<h2>Глобальные параметры проекта и их использование</h2>
-
-<p data-adtags-visited="true">Далеко не все пользуются глобальными параметрами проекта, которые работают на весь проект и позволяют задавать номера, ID или имена для автоматической подстановки как на схеме, так и на плате, и даже при генерации документации.</p>
-
-
-
-<p data-adtags-visited="true">Находятся они в опциях проекта:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8563" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-15/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-15-1.png" data-orig-size="421,399" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-15" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-15-1.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-15-1.png?w=421" src="b81-15-1.png" alt="B81-15" class="wp-image-8563"></figure></div>
-
-
-
-<p data-adtags-visited="true">Вкладка <strong>Parametrs</strong>:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8486" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-16/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-16.png" data-orig-size="1066,617" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-16" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-16.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-16.png?w=700" src="b81-16.png" alt="B81-16" class="wp-image-8486"></figure></div>
-
-
-
-<p data-adtags-visited="true">Здесь можно объявить идентификационный номер проекта, его имя, идентификационный номер платы и ревизию проекта. К примеру, объявлен параметр&nbsp;<strong>PCB_ID</strong>&nbsp;— идентификационный номер платы. И его можно использовать для автоматической подстановки в качестве сокращённого номера печатной платы на верхнем и нижнем слоях таким способом (свойства обычного текста на любом слое):</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8490" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-20/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-20.png" data-orig-size="333,223" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-20" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-20.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-20.png?w=333" src="b81-20.png" alt="B81-20" class="wp-image-8490"></figure></div>
-
-
-
-<p class="inline-ad-slot" id="inline-ad-3" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Выглядит на плате это так (текст на верхнем слое меди):</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8489" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-19/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-19.png" data-orig-size="976,628" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-19" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-19.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-19.png?w=700" src="b81-19.png" alt="B81-19" class="wp-image-8489"></figure></div>
-
-
-
-<p data-adtags-visited="true">Тут кстати видна одна небольшая фишка культуры разработки печатной платы — дата проектирования. Состоит она из последних 2 цифр года и&nbsp;<a href="https://xn--d1ababprchchy.xn--p1ai/">номер недели</a>&nbsp;на момент завершения проектирования и разводки печатной платы (на скриншоте выше: <strong>1911</strong>).</p>
-
-
-
-<p data-adtags-visited="true">Также глобальные параметры можно использовать, к примеру, в Draftsman. Опять же инструмент текст, а его значение составляем из двух параметров проекта:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8488" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-18/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-18.png" data-orig-size="314,154" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-18" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-18.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-18.png?w=314" src="b81-18.png" alt="B81-18" class="wp-image-8488"></figure></div>
-
-
-
-<p data-adtags-visited="true"><em>Примечание:&nbsp;В плате параметры указываются через . (точку), а в Draftsman они вставляются через = (равно).</em></p>
-
-
-
-<p data-adtags-visited="true">И теперь, накидав простой сборочный чертёж для пайки прототипа, вставить текст с номерами проекта и платы:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8487" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-17/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-17.png" data-orig-size="1183,835" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-17" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-17.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-17.png?w=700" src="b81-17.png" alt="B81-17" class="wp-image-8487"></figure></div>
-
-
-
-<p class="inline-ad-slot" id="inline-ad-4" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Ещё одно место, где удобно использовать глобальные параметры проекта — это файлы OutJob. Смотрите, делаем задачи по генерации документации:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8491" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-21/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-21.png" data-orig-size="433,536" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-21" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-21.png?w=242" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-21.png?w=433" src="b81-21.png" alt="B81-21" class="wp-image-8491"></figure></div>
-
-
-
-<p data-adtags-visited="true">А в настройках задачи можно подставлять параметры проекта:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8492" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-22/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-22.png" data-orig-size="816,374" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-22" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-22.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-22.png?w=700" src="b81-22.png" alt="B81-22" class="wp-image-8492"></figure></div>
-
-
-
-<p data-adtags-visited="true">Таким образом, файл сразу генерируется с именем, соответствующим текущему идентификационному номеру проекта, содержанию файла и ревизии.</p>
-
-
-
-<h2>Классы цепей (Net Class и Diff. Pair Net Class) и правила для них</h2>
-
-
-
-<p data-adtags-visited="true">Инструмент <strong>Parametr Set</strong> используется обычно для установки правил на группу или одиночную цепь:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8493" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-23/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-23.png" data-orig-size="239,547" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-23" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-23.png?w=131" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-23.png?w=239" src="b81-23.png" alt="B81-23" class="wp-image-8493"></figure></div>
-
-
-
-<p class="inline-ad-slot" id="inline-ad-5" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">К примеру, можно задать для группы цепей правило на допустимую разницу величины всех длин цепей в пределах группы:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8495" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-25/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-25.png" data-orig-size="329,202" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-25" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-25.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-25.png?w=329" src="b81-25.png" alt="B81-25" class="wp-image-8495"></figure></div>
-
-
-
-<p data-adtags-visited="true">А также в свойствах этого инструмента содержится и колонка с именем класса, к которому будет относится цепь или группа цепей:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8494" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-24/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-24.png" data-orig-size="329,202" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-24" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-24.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-24.png?w=329" src="b81-24.png" alt="B81-24" class="wp-image-8494"></figure></div>
-
-
-
-<p data-adtags-visited="true">Более того, в инструменте определения дифференциальной пары — <strong>Differential Pair</strong>:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8496" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-26/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-26.png" data-orig-size="317,216" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-26" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-26.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-26.png?w=317" src="b81-26.png" alt="B81-26" class="wp-image-8496"></figure></div>
-
-
-
-<p data-adtags-visited="true">Также есть колонка с именем класса, к которому будет относиться эта дифференциальная пара:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8497" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-27/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-27.png" data-orig-size="335,206" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-27" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-27.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-27.png?w=335" src="b81-27.png" alt="B81-27" class="wp-image-8497"></figure></div>
-
-
-
-<p data-adtags-visited="true">Как можно заметить выше, классы для одиночных цепей и дифференциальных пар имеют различные типы, это удобно при создании правил.</p>
-
-
-
-<p data-adtags-visited="true">Вот можно видеть правило, созданное инструментом <strong>Parametr Set</strong> из схемы (с припиской <strong>Schematic *</strong> в имени правила):</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8498" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-28/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-28.png" data-orig-size="973,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-28" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-28.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-28.png?w=700" src="b81-28.png" alt="B81-28" class="wp-image-8498"></figure></div>
-
-
-
-<p class="inline-ad-slot" id="inline-ad-6" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">А вот правила, созданные вручную для конкретного класса:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8499" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-29/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-29.png" data-orig-size="973,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-29" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-29.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-29.png?w=700" src="b81-29.png" alt="B81-29" class="wp-image-8499"></figure></div>
-
-
-
-<p data-adtags-visited="true">Более того, во втором правиле толщины и зазоры дифференциальной пары берутся из профиля импеданса <strong>D100</strong>&nbsp;(про который будет рассказано далее):</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8500" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-30/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-30.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-30" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-30.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-30.png?w=700" src="b81-30.png" alt="B81-30" class="wp-image-8500"></figure></div>
-
-
-
-<p data-adtags-visited="true">Основное отличие же — это создание правил для платы двумя основными путями:</p>
-
-
-
-<ol><li>На схеме, в свойствах инструментов <strong>Parametr Set</strong> или <strong>Differential Pair</strong>. В этом случае всё, вроде бы, удобно (задаём всё на схеме и далее уже не паримся) и по канону САПР — полностью сквозное проектирование, но если у вас куча однотипных цепей и для каждой стоит <strong>Parametr Set</strong>, то будет создано столько же и правил, несмотря на то, что они могут быть полностью идентичны (ещё бывает баг, что при импорте изменений из схемы в плату все правила, созданные таким путём, Альтиум как бы пересоздаёт, удаляя все текущие и добавляя их заново).</li><li>В параметрах платы создаём правила для различных типов классов и соответствующих имён, а в схеме цепи присваиваем конкретным классам и не более. В этом случае для всех однотипных цепей будет только одно правило (по имени класса), не будет дубликатов правил (как и возможного бага с постоянным перезаписыванием правил).</li></ol>
-
-
-
-<p data-adtags-visited="true"><em>Примечание:&nbsp;Нельзя однозначно сказать, что удобен всегда тот или иной путь, выбор, как создавать правила, необходимо делать в зависимости от задачи или ваших предпочтений. :)</em></p>
-
-<h2>Инструмент Smart Paste</h2>
-
-<p data-adtags-visited="true">Этот инструмент следует использовать, если у вас много однотипных объектов. Находится он здесь:</p>
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8566" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-93/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-93.png" data-orig-size="221,275" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-93" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-93.png?w=221" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-93.png?w=221" src="b81-93.png" alt="B81-93" class="wp-image-8566"></figure></div>
-
-
-
-<p data-adtags-visited="true">И наглядно увидеть, что с его помощью можно сделать, можно на гифке ниже:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8567" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-94/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-94.gif" data-orig-size="800,627" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-94" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-94.gif?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-94.gif?w=700" src="b81-94.gif" alt="B81-94" class="wp-image-8567"></figure></div>
-
-
-
-<p data-adtags-visited="true">Здесь я взял группу Net Labels, относящихся к I2S, и с помощью Smart Paste я могу их вставить как такую же группу, но другого типа объектов (порты, шина Harness, просто текст и т. д.), что может значительно ускорить проектирование схемы.</p>
-
-
-
-<h2>Правила технологических возможностей производства</h2>
-
-
-
-<p data-adtags-visited="true">Этот раздел с правилами, скорее, для совсем новичков, но решил, что стоит описать его для тех, кто первых раз будет проектировать свою печатную плату и делать потом заказ на производстве.</p>
-
-
-
-<p class="inline-ad-slot" id="inline-ad-7" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Итак, вначале нам надо определиться, где мы хотим изготавливать печатную плату, и посмотреть, что завод-изготовитель может сделать. Возьмем для примера <a href="https://www.rezonit.ru/support/technology/urgent/index.php">технологические возможности от Резонита</a>. Для печатной платы с 18 мкм толщиной фольги и коэффициентом стоимости 1.5 (более сложное изготовление в сравнении со стандартным) можно отметить следующие основные параметры:</p>
-
-
-
-<ul><li>Металлизированное отверстие = 0,2 мм</li><li>Поясок площадки переходного отверстия = 0,1 мм</li></ul>
-
-
-
-<p data-adtags-visited="true">Эти два пункта взаимосвязаны и необходимо задать минимально-возможные значения для переходного отверстия (отверстие собственно = 0,2 мм, а внешний диаметр = 0,2 + 2 * 0,1 = 0,4 мм):</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8501" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-31/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-31.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-31" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-31.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-31.png?w=700" src="b81-31.png" alt="B81-31" class="wp-image-8501"></figure></div>
-
-
-
-<ul><li>Поясок монтажной контактной площадки = 0,15 мм</li></ul>
-
-
-
-<p data-adtags-visited="true">Аналогично необходимо сделать и для контактных площадок.</p>
-
-
-
-<ul><li>Проводник на внешних слоях = 0,1 мм</li></ul>
-
-
-
-<p data-adtags-visited="true">Здесь всё просто, это минимально возможная толщина дорожки (максимальную стоит задавать в разумных пределах, исходя из величин токов на вашей плате):</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8564" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-92/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-92.png" data-orig-size="1073,695" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-92" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-92.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-92.png?w=700" src="b81-92.png" alt="B81-92" class="wp-image-8564"></figure></div>
-
-
-
-<ul><li>Зазор между проводниками на внешних слоях = 0,1 мм</li></ul>
-
-
-
-<p class="inline-ad-slot" id="inline-ad-8" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Здесь также всё просто — это минимальный зазор между любыми токопроводящими дорожками\полигонами\заливками:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8502" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-32/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-32.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-32" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-32.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-32.png?w=700" src="b81-32.png" alt="B81-32" class="wp-image-8502"></figure></div>
-
-
-
-<p data-adtags-visited="true"><em>Примечание:&nbsp;Стоит учитывать, что когда вы делаете выравнивание длин «змейкой» или любым другим способом, то зазор в пределах одной цепи по отношению самой к себе стоит делать немного больше этого, иначе возможна ситуация, когда производство вытравит плату, тестером замыканий между различными цепями не будет, зато возможны замыкания как раз в пределах одной цепи на «змейке».</em></p>
-
-
-
-<ul><li>Масочный мостик между контактными площадками = 0,1 мм</li></ul>
-
-
-
-<p data-adtags-visited="true">Тоже ничего сложного, просто минимальное расстояние между двумя масками (к примеру, на падах QFN корпуса):</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8503" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-33/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-33.png" data-orig-size="1108,663" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-33" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-33.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-33.png?w=700" src="b81-33.png" alt="B81-33" class="wp-image-8503"></figure></div>
-
-
-
-<ul><li>Припуск паяльной маски = 0,025 мм</li></ul>
-
-
-
-<p data-adtags-visited="true">Насколько пад дополнительно открыт от маски относительно базового пада:</p>
 
 
 
@@ -399,7 +155,7 @@
 
 
 
-<p class="inline-ad-slot" id="inline-ad-9" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Минимальное расстояние от каких-либо элементов до края платы:</p>
+<p class="inline-ad-slot" id="inline-ad-9" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700"></p><p>Минимальное расстояние от каких-либо элементов до края платы:</p>
 
 
 
@@ -407,11 +163,11 @@
 
 
 
-<p data-adtags-visited="true">Если это не соблюсти, то возможна ситуация, когда при фрезеровке края платы будут оторваны дорожки или повреждены внутренние слои.</p>
+<p>Если это не соблюсти, то возможна ситуация, когда при фрезеровке края платы будут оторваны дорожки или повреждены внутренние слои.</p>
 
 
 
-<p data-adtags-visited="true"><em>Примечание:&nbsp;Для удобства эти правила можно сохранить в файл с названием производителя и стека, чтобы в дальнейшем легко экспортировать правила в новые платы (ПКМ на <strong>Design Rules,</strong> и там есть соответствующие пункты меню).</em></p>
+<p><em>Примечание:&nbsp;Для удобства эти правила можно сохранить в файл с названием производителя и стека, чтобы в дальнейшем легко экспортировать правила в новые платы (ПКМ на <strong>Design Rules,</strong> и там есть соответствующие пункты меню).</em></p>
 
 
 
@@ -419,7 +175,7 @@
 
 
 
-<p data-adtags-visited="true">Возьмем для примера <a href="https://www.rezonit.ru/support/technology/urgent/index.php">стандартный стек для 8 слоёв, 18 мкм от Резонита</a>. Выглядит он следующим образом:</p>
+<p>Возьмем для примера <a href="https://www.rezonit.ru/support/technology/urgent/index.php">стандартный стек для 8 слоёв, 18 мкм от Резонита</a>. Выглядит он следующим образом:</p>
 
 
 
@@ -427,7 +183,7 @@
 
 
 
-<p class="inline-ad-slot" id="inline-ad-10" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Инструмент <strong>Layer Stack Manager</strong> для редактирования стека печатной платы находится здесь:</p>
+<p class="inline-ad-slot" id="inline-ad-10" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700"></p><p>Инструмент <strong>Layer Stack Manager</strong> для редактирования стека печатной платы находится здесь:</p>
 
 
 
@@ -435,7 +191,7 @@
 
 
 
-<p data-adtags-visited="true">Выглядит определение стека следующим образом:</p>
+<p>Выглядит определение стека следующим образом:</p>
 
 
 
@@ -443,7 +199,7 @@
 
 
 
-<p data-adtags-visited="true">Добавляются\удаляются слои через ПКМ. Также можно видеть, что ядро и препреги не из стандартной библиотеки материала Альтиума. Добавление корректных типов материалов, которые использует завод-изготовитель печатных плат, даёт более точные расчеты импедансов и симуляцию. Инструмент <strong>Material Library</strong> находится здесь:</p>
+<p>Добавляются\удаляются слои через ПКМ. Также можно видеть, что ядро и препреги не из стандартной библиотеки материала Альтиума. Добавление корректных типов материалов, которые использует завод-изготовитель печатных плат, даёт более точные расчеты импедансов и симуляцию. Инструмент <strong>Material Library</strong> находится здесь:</p>
 
 
 
@@ -451,7 +207,7 @@
 
 
 
-<p data-adtags-visited="true">Выглядит он следующим образом:</p>
+<p>Выглядит он следующим образом:</p>
 
 
 
@@ -459,11 +215,11 @@
 
 
 
-<p class="inline-ad-slot" id="inline-ad-11" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true"><em>Примечание: Для удобства эти материалы можно сохранить в файл с названием производителя, чтобы в дальнейшем легко экспортировать материалы на новом рабочем месте (кнопки <strong>Load</strong> \ <strong>Save</strong> слева внизу).</em></p>
+<p class="inline-ad-slot" id="inline-ad-11" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700"></p><p><em>Примечание: Для удобства эти материалы можно сохранить в файл с названием производителя, чтобы в дальнейшем легко экспортировать материалы на новом рабочем месте (кнопки <strong>Load</strong> \ <strong>Save</strong> слева внизу).</em></p>
 
 
 
-<p data-adtags-visited="true">Рядом c Material Library также есть инструмент <strong>Layer Stack Visualizer</strong>, который позволяет наглядно оценить порядок слоёв, габариты стека в 2D\3D видах:</p>
+<p>Рядом c Material Library также есть инструмент <strong>Layer Stack Visualizer</strong>, который позволяет наглядно оценить порядок слоёв, габариты стека в 2D\3D видах:</p>
 
 
 
@@ -471,7 +227,7 @@
 
 
 
-<p data-adtags-visited="true">Также в Layer Stack Manager следующая вкладка — это <strong>Impedance</strong>:</p>
+<p>Также в Layer Stack Manager следующая вкладка — это <strong>Impedance</strong>:</p>
 
 
 
@@ -479,7 +235,7 @@
 
 
 
-<p data-adtags-visited="true">Здесь справа можно видеть все профили импедансов и послойно видеть параметры и экранирующие слои, на основе которых и идёт расчёт импедансов на целевом медном слое. Выбрав интересующий профиль, в его свойствах можно посмотреть более подробные параметры:</p>
+<p>Здесь справа можно видеть все профили импедансов и послойно видеть параметры и экранирующие слои, на основе которых и идёт расчёт импедансов на целевом медном слое. Выбрав интересующий профиль, в его свойствах можно посмотреть более подробные параметры:</p>
 
 
 
@@ -487,7 +243,7 @@
 
 
 
-<p class="inline-ad-slot" id="inline-ad-12" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Выбрать его тип (одиночная цепь или дифференциальная пара), задать допуск импеданса, а также сделать выбор, каким образом производить расчёт:</p>
+<p class="inline-ad-slot" id="inline-ad-12" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700"></p><p>Выбрать его тип (одиночная цепь или дифференциальная пара), задать допуск импеданса, а также сделать выбор, каким образом производить расчёт:</p>
 
 
 
@@ -495,15 +251,15 @@
 
 
 
-<p data-adtags-visited="true">В обоих вариантах толщина дорожки во время разводки может варьироваться: минимальная — номинальная (заданной) — максимальная в пределах заданного допуска импеданса.</p>
+<p>В обоих вариантах толщина дорожки во время разводки может варьироваться: минимальная — номинальная (заданной) — максимальная в пределах заданного допуска импеданса.</p>
 
 
 
-<p data-adtags-visited="true">Для чего нужны эти профили?</p>
+<p>Для чего нужны эти профили?</p>
 
 
 
-<p data-adtags-visited="true">Да всё просто, их теперь можно использовать в правилах:</p>
+<p>Да всё просто, их теперь можно использовать в правилах:</p>
 
 
 
@@ -511,7 +267,7 @@
 
 
 
-<p data-adtags-visited="true">Выше — правило для LVDS, задающее толщины дорожек и зазор между ними на основании профиля <strong>D100</strong>. Таким же образом можно задавать толщину дорожки и для одиночной цепи:</p>
+<p>Выше — правило для LVDS, задающее толщины дорожек и зазор между ними на основании профиля <strong>D100</strong>. Таким же образом можно задавать толщину дорожки и для одиночной цепи:</p>
 
 
 
@@ -519,17 +275,17 @@
 
 
 
-<p data-adtags-visited="true">И вот тут как раз и удобно использовать классы цепей, задаваемые на уровне принципиальной схемы, о которых рассказывалось ранее, в качестве примера, таким образом можно легко создать одно правило разводки для (общего) LVDS класса, назначить в правиле необходимый профиль импеданса, а в схеме добавить все LVDS сигналы в этот класс.</p>
+<p>И вот тут как раз и удобно использовать классы цепей, задаваемые на уровне принципиальной схемы, о которых рассказывалось ранее, в качестве примера, таким образом можно легко создать одно правило разводки для (общего) LVDS класса, назначить в правиле необходимый профиль импеданса, а в схеме добавить все LVDS сигналы в этот класс.</p>
 
 <h2>Менеджер сеток привязки</h2>
 
-<p data-adtags-visited="true">Просмотр и редактирование всех сеток привязки для печатной платы находится в свойствах платы отдельным блоком — <strong>Grid Manager</strong>:</p>
+<p>Просмотр и редактирование всех сеток привязки для печатной платы находится в свойствах платы отдельным блоком — <strong>Grid Manager</strong>:</p>
 
 <div class="wp-block-image"><figure class="aligncenter"><img data-attachment-id="8516" data-permalink="https://adelectronics.ru/2019/04/18/altium-designer-19-%d1%81%d0%be%d0%b2%d0%b5%d1%82%d1%8b-%d0%b8-%d1%84%d0%b8%d1%88%d0%ba%d0%b8-%d1%83%d0%bf%d1%80%d0%be%d1%89%d0%b0%d1%8e%d1%89%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d0%b8/b81-46/" data-orig-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-46.png" data-orig-size="327,204" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="B81-46" data-image-description="" data-medium-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-46.png?w=300" data-large-file="https://adelectronicsru.files.wordpress.com/2019/04/b81-46.png?w=327" src="b81-46.png" alt="B81-46" class="wp-image-8516"></figure></div>
 
 
 
-<p data-adtags-visited="true">По умолчанию там одна глобальная сетка привязки (и она же переключается по клавише <strong>G</strong>), в которой обычно и работает инженер. Для примера вот так выглядит BGA корпус с сеткой 0,25 мм (её, правда, почти не видно, т. к. стоит точечный вид):</p>
+<p>По умолчанию там одна глобальная сетка привязки (и она же переключается по клавише <strong>G</strong>), в которой обычно и работает инженер. Для примера вот так выглядит BGA корпус с сеткой 0,25 мм (её, правда, почти не видно, т. к. стоит точечный вид):</p>
 
 
 
@@ -537,7 +293,7 @@
 
 
 
-<p data-adtags-visited="true">Нажмём <strong>Add</strong> и добавим новую сетку, укажем центр в центре BGA корпуса и сделаем шаг 0,1 мм:</p>
+<p>Нажмём <strong>Add</strong> и добавим новую сетку, укажем центр в центре BGA корпуса и сделаем шаг 0,1 мм:</p>
 
 
 
@@ -545,7 +301,7 @@
 
 
 
-<p class="inline-ad-slot" id="inline-ad-13" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Как можно видеть, сетка появилась:</p>
+<p class="inline-ad-slot" id="inline-ad-13" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700"></p><p>Как можно видеть, сетка появилась:</p>
 
 
 
@@ -553,7 +309,7 @@
 
 
 
-<p data-adtags-visited="true">Таким же образом можно добавлять и полярные сетки:</p>
+<p>Таким же образом можно добавлять и полярные сетки:</p>
 
 
 
@@ -561,7 +317,7 @@
 
 
 
-<p data-adtags-visited="true">Выглядит это так:</p>
+<p>Выглядит это так:</p>
 
 
 
@@ -569,15 +325,15 @@
 
 
 
-<p class="inline-ad-slot" id="inline-ad-14" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">А для чего это нужно то?</p>
+<p class="inline-ad-slot" id="inline-ad-14" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700"></p><p>А для чего это нужно то?</p>
 
 
 
-<p data-adtags-visited="true">Таким образом можно организовывать локальную привязку, отличающуюся от глобальной. При использовании больших BGA корпусов шаг у них обычно ощутимо меньше, чем у остальных компонентов, и поэтому вести дорожки в пределах BGA корпуса легче, если есть локальная соответствующая шагу корпуса сетка.</p>
+<p>Таким образом можно организовывать локальную привязку, отличающуюся от глобальной. При использовании больших BGA корпусов шаг у них обычно ощутимо меньше, чем у остальных компонентов, и поэтому вести дорожки в пределах BGA корпуса легче, если есть локальная соответствующая шагу корпуса сетка.</p>
 
 
 
-<p data-adtags-visited="true">Привязка дорожки с переходом от декартовой сетки к полярной:</p>
+<p>Привязка дорожки с переходом от декартовой сетки к полярной:</p>
 
 
 
@@ -589,7 +345,7 @@
 
 
 
-<p data-adtags-visited="true">Опять немного культуры проектирования. Это больше делают для панелей плат, но при наличии места на самой печатной плате окошки с номерами медных слоёв не помешают. Выглядит это так:</p>
+<p>Опять немного культуры проектирования. Это больше делают для панелей плат, но при наличии места на самой печатной плате окошки с номерами медных слоёв не помешают. Выглядит это так:</p>
 
 
 
@@ -597,7 +353,7 @@
 
 
 
-<p data-adtags-visited="true">В 3D рендере:</p>
+<p>В 3D рендере:</p>
 
 
 
@@ -605,13 +361,13 @@
 
 
 
-<p data-adtags-visited="true">Здесь можно видеть, что сигнальные слои размещены в квадрате, а plane слои в виде заливки с инвертированной цифрой слоя. Таким образом, можно наглядно видеть наличие слоёв и правильность их очерёдности (в пределах видимости через стеклотекстолит, слои как на скриншоте выше, так и на реальной плате с каждой стороны должны плавно исчезать по порядку).</p>
+<p>Здесь можно видеть, что сигнальные слои размещены в квадрате, а plane слои в виде заливки с инвертированной цифрой слоя. Таким образом, можно наглядно видеть наличие слоёв и правильность их очерёдности (в пределах видимости через стеклотекстолит, слои как на скриншоте выше, так и на реальной плате с каждой стороны должны плавно исчезать по порядку).</p>
 
 <h2>Тип подключения компонента к полигону</h2>
 
 
 
-<p data-adtags-visited="true">Делаем DC-DC, к примеру, вот такая схема:</p>
+<p>Делаем DC-DC, к примеру, вот такая схема:</p>
 
 
 
@@ -619,11 +375,11 @@
 
 
 
-<p data-adtags-visited="true">И тут есть необходимость подключения DA2, L3, C36 и других компонентов без термобарьеров к полигонам. Как это сделать?</p>
+<p>И тут есть необходимость подключения DA2, L3, C36 и других компонентов без термобарьеров к полигонам. Как это сделать?</p>
 
 
 
-<p data-adtags-visited="true">Есть довольно простой способ, выделяем нужные нам компоненты, заходим в их параметры:</p>
+<p>Есть довольно простой способ, выделяем нужные нам компоненты, заходим в их параметры:</p>
 
 
 
@@ -631,11 +387,11 @@
 
 
 
-<p data-adtags-visited="true">Все смежные по имени параметры здесь будут видны, но при различии их значения в качестве значения будет «<strong>*</strong>«, а в совпадающих по значению параметрах будет отображено их значение. Так вот, нажимаем кнопку <strong>Add</strong> внизу и добавляем параметр <strong>ClassName</strong> со значением <strong>DirectConnect</strong> (значение может быть и любое другое, главное, что бы оно легко запоминалось и четко идентифицировалось с предназначением). Теперь все эти компоненты находятся в классе компонентов DirectConnect.</p>
+<p>Все смежные по имени параметры здесь будут видны, но при различии их значения в качестве значения будет «<strong>*</strong>«, а в совпадающих по значению параметрах будет отображено их значение. Так вот, нажимаем кнопку <strong>Add</strong> внизу и добавляем параметр <strong>ClassName</strong> со значением <strong>DirectConnect</strong> (значение может быть и любое другое, главное, что бы оно легко запоминалось и четко идентифицировалось с предназначением). Теперь все эти компоненты находятся в классе компонентов DirectConnect.</p>
 
 
 
-<p data-adtags-visited="true">Далее, заходим в правила печатной платы и создаём привило подключения полигона для указанного класса компонентов:</p>
+<p>Далее, заходим в правила печатной платы и создаём привило подключения полигона для указанного класса компонентов:</p>
 
 
 
@@ -643,7 +399,7 @@
 
 
 
-<p class="inline-ad-slot" id="inline-ad-15" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Всё. Результат:</p>
+<p class="inline-ad-slot" id="inline-ad-15" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700"></p><p>Всё. Результат:</p>
 
 
 
@@ -651,11 +407,11 @@
 
 
 
-<p data-adtags-visited="true">DA2, L3, C36 и другие занесённые в этот класс компоненты будут теперь всегда подключаться без термобарьеров к любым полигонам.</p>
+<p>DA2, L3, C36 и другие занесённые в этот класс компоненты будут теперь всегда подключаться без термобарьеров к любым полигонам.</p>
 
 
 
-<p data-adtags-visited="true"><em>Примечание: Здесь показан вариант исключительно для глобального правила подключения полигона, при желании можно также комбинировать класс компонента и имя цепи в качестве объектов для применения, а также ничего не мешает это использовать и в других типах правил.</em></p>
+<p><em>Примечание: Здесь показан вариант исключительно для глобального правила подключения полигона, при желании можно также комбинировать класс компонента и имя цепи в качестве объектов для применения, а также ничего не мешает это использовать и в других типах правил.</em></p>
 
 
 
@@ -663,7 +419,7 @@
 
 
 
-<p data-adtags-visited="true">Бывает такое, что нет необходимости подключения целого компонента к полигону без термобарьера, а надо подключить только 1-2 пина. Сделать это быстрее, чем через схему, можно с помощью классов контактных площадок (<strong>Pad Class</strong>). Заходим в обозреватель всех классов печатной платы:</p>
+<p>Бывает такое, что нет необходимости подключения целого компонента к полигону без термобарьера, а надо подключить только 1-2 пина. Сделать это быстрее, чем через схему, можно с помощью классов контактных площадок (<strong>Pad Class</strong>). Заходим в обозреватель всех классов печатной платы:</p>
 
 
 
@@ -671,7 +427,7 @@
 
 
 
-<p class="inline-ad-slot" id="inline-ad-16" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Добавляем новый класс в <strong>Pad Classes</strong>&nbsp;с именем <strong>PadDirectConnect</strong> (имя может быть и любое другое, главное, чтобы оно легко запоминалось и четко идентифицировалось с предназначением) и добавляем в него необходимые пины компонентов (удобно пользоваться фильтром вверху для более быстрого поиска):</p>
+<p class="inline-ad-slot" id="inline-ad-16" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700"></p><p>Добавляем новый класс в <strong>Pad Classes</strong>&nbsp;с именем <strong>PadDirectConnect</strong> (имя может быть и любое другое, главное, чтобы оно легко запоминалось и четко идентифицировалось с предназначением) и добавляем в него необходимые пины компонентов (удобно пользоваться фильтром вверху для более быстрого поиска):</p>
 
 
 
@@ -679,7 +435,7 @@
 
 
 
-<p data-adtags-visited="true">Далее заходим в правила печатной платы и создаём привило подключения полигона для указанного класса контактных площадок:</p>
+<p>Далее заходим в правила печатной платы и создаём привило подключения полигона для указанного класса контактных площадок:</p>
 
 
 
@@ -687,7 +443,7 @@
 
 
 
-<p data-adtags-visited="true">Результат:</p>
+<p>Результат:</p>
 
 
 
@@ -695,7 +451,7 @@
 
 
 
-<p class="inline-ad-slot" id="inline-ad-17" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">C29, C30 были добавлены в PadDirectConnect класс и на них теперь действует правило прямого подключения полигона.</p>
+<p class="inline-ad-slot" id="inline-ad-17" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700"></p><p>C29, C30 были добавлены в PadDirectConnect класс и на них теперь действует правило прямого подключения полигона.</p>
 
 
 
@@ -703,7 +459,7 @@
 
 
 
-<p data-adtags-visited="true">Ранее для этого необходимо было создавать отдельное правило с проверкой на <strong>IsVia</strong> и указанием подключения к полигону, в последних версиях Альтиума же просто заходим в базовое правило <strong>PolygonConnect</strong>, тут можно в <strong>Advanced</strong> режиме настроить подключение как переходных отверстий, так и отдельно выводных и планарных контактных площадок:</p>
+<p>Ранее для этого необходимо было создавать отдельное правило с проверкой на <strong>IsVia</strong> и указанием подключения к полигону, в последних версиях Альтиума же просто заходим в базовое правило <strong>PolygonConnect</strong>, тут можно в <strong>Advanced</strong> режиме настроить подключение как переходных отверстий, так и отдельно выводных и планарных контактных площадок:</p>
 
 
 
@@ -715,7 +471,7 @@
 
 
 
-<p data-adtags-visited="true">Мелочь, но ощутимо влияет на наглядность разводки и нахождение ошибок и недоработок. Открываем <strong>View Configuration</strong> через <strong>Panels</strong>:</p>
+<p>Мелочь, но ощутимо влияет на наглядность разводки и нахождение ошибок и недоработок. Открываем <strong>View Configuration</strong> через <strong>Panels</strong>:</p>
 
 
 
@@ -723,7 +479,7 @@
 
 
 
-<p data-adtags-visited="true">Или через двойной щелчок на цветном прямоугольнике, отображающем цвет текущего слоя:</p>
+<p>Или через двойной щелчок на цветном прямоугольнике, отображающем цвет текущего слоя:</p>
 
 
 
@@ -731,7 +487,7 @@
 
 
 
-<p data-adtags-visited="true">Переходим во <strong>View Options</strong> и настраиваем параметр прозрачности (<strong>Transparency</strong>) для полигонов и регионов:</p>
+<p>Переходим во <strong>View Options</strong> и настраиваем параметр прозрачности (<strong>Transparency</strong>) для полигонов и регионов:</p>
 
 
 
@@ -739,7 +495,7 @@
 
 
 
-<p data-adtags-visited="true">Результат:</p>
+<p>Результат:</p>
 
 
 
@@ -747,13 +503,13 @@
 
 
 
-<p data-adtags-visited="true"><em>Примечание: Зайдите во <strong>View Options</strong> в 3D-режиме отображения печатной платы, опции отображения поменяются и можно настроить вид 3D более удобно для вас.</em></p>
+<p><em>Примечание: Зайдите во <strong>View Options</strong> в 3D-режиме отображения печатной платы, опции отображения поменяются и можно настроить вид 3D более удобно для вас.</em></p>
 
 <h2>Фильтр объектов для выделения</h2>
 
 
 
-<p data-adtags-visited="true">Фильтр объектов для выделения находится здесь:</p>
+<p>Фильтр объектов для выделения находится здесь:</p>
 
 
 
@@ -761,7 +517,7 @@
 
 
 
-<p data-adtags-visited="true">Если он активен, то появляется зелёный кружок на значке фильтра:</p>
+<p>Если он активен, то появляется зелёный кружок на значке фильтра:</p>
 
 
 
@@ -769,7 +525,7 @@
 
 
 
-<p data-adtags-visited="true">И наглядное отображение, как он работает:</p>
+<p>И наглядное отображение, как он работает:</p>
 
 
 
@@ -777,11 +533,11 @@
 
 
 
-<p data-adtags-visited="true">Слева направо выделялись все объекты, что попадали в прямоугольник выделения, справа налево выделялись вообще все объекты, касающиеся прямоугольника выделения, а при активации фильтра&nbsp; выделялись только дорожки в обоих случаях.</p>
+<p>Слева направо выделялись все объекты, что попадали в прямоугольник выделения, справа налево выделялись вообще все объекты, касающиеся прямоугольника выделения, а при активации фильтра&nbsp; выделялись только дорожки в обоих случаях.</p>
 
 
 
-<p data-adtags-visited="true">Да, к слову, если необходимо выделить контактные площадки компонента, которые не выделяются отдельно, то их необходимо выделять с Shift-ом:</p>
+<p>Да, к слову, если необходимо выделить контактные площадки компонента, которые не выделяются отдельно, то их необходимо выделять с Shift-ом:</p>
 
 
 
@@ -793,7 +549,7 @@
 
 
 
-<p data-adtags-visited="true">Инструмент <strong>Paste Special</strong> находится здесь:</p>
+<p>Инструмент <strong>Paste Special</strong> находится здесь:</p>
 
 
 
@@ -801,7 +557,7 @@
 
 
 
-<p class="inline-ad-slot" id="inline-ad-18" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">Наглядно для чего его можно использовать:</p>
+<p class="inline-ad-slot" id="inline-ad-18" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700"></p><p>Наглядно для чего его можно использовать:</p>
 
 
 
@@ -809,7 +565,7 @@
 
 
 
-<p data-adtags-visited="true">Таким образом можно легко и быстро сделать ряд контактных площадок какого либо компонента, настроив только первый, а далее скопировав его, вставить этим инструментом с авто инкрементом на заданную величину и с указанным шагом.</p>
+<p>Таким образом можно легко и быстро сделать ряд контактных площадок какого либо компонента, настроив только первый, а далее скопировав его, вставить этим инструментом с авто инкрементом на заданную величину и с указанным шагом.</p>
 
 
 
@@ -817,7 +573,7 @@
 
 
 
-<p data-adtags-visited="true">Элемент культуры проектирования. Снова. Вот этот вырез справа, сверху:</p>
+<p>Элемент культуры проектирования. Снова. Вот этот вырез справа, сверху:</p>
 
 
 
@@ -825,7 +581,7 @@
 
 
 
-<p class="inline-ad-slot" id="inline-ad-19" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700" data-adtags-visited="true"></p><p data-adtags-visited="true">На фигурных платах особо смысла он не имеет, а вот на квадратных или прямоугольных платах он всегда отображает правую сторону печатной платы:</p>
+<p class="inline-ad-slot" id="inline-ad-19" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:700px;" data-adtags-width="700"></p><p>На фигурных платах особо смысла он не имеет, а вот на квадратных или прямоугольных платах он всегда отображает правую сторону печатной платы:</p>
 
 
 
