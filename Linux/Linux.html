@@ -21,27 +21,36 @@
     <p><strong><font face="Arial">Описание некоторых команд системы Linux.</font></strong><BR><BR></p>
     <div class="hd3">Общие</div>
     <ul>
-      <li>date - текущее время и дата; date +"%H:%M" - вывод времени в 24 часовом формате</li>
-      <li>tzselect - настройка таймзоны</li>
-      <li>adduser pi - создаём пользователя pi</li>
-      <li>usermod -aG sudo pi - разрешаем пользователю pi выполнять sudo</li>
-      <li>4 (<a href="https://github.com/settings/keys">https://github.com/settings/keys</a>)</li>
-      <li>pwd - показывает текущюю директорию</li>
-      <li>ls - показывает файлы в текущей директории</li>
-      <li>cd - смена текущей директории</li>
-      <li>man - система помощи по командам</li>
-      <li>clear - очистка экрана консоли</li>
-      <li>exit - выход</li>
-      <li>mkdir - создание новой директории</li>
-      <li>touch - создание нового файла</li>
-      <li>rm - удаление файла или директории с ключом -r</li>
-      <li>cp - копирование файла или директории</li>
-      <li>mv - перемещение файла или директории</li>
-      <li>nano - редактирование файла</li>
-      <li>cat - отображение файла на консоли</li>
-      <li>less - отображение файла на консоли постранично</li>
-      <li>wget - скачивание файла из интернета</li>
-      <li>top - отображает процессы с сортировкой по загрузке</li>
+      <li><span class="t_purple">adduser pi</span> - создаём пользователя pi</li>
+      <li><span class="t_purple">cat</span> - отображение файла на консоли</li>
+      <li><span class="t_purple">cd</span> - смена текущей директории</li>
+      <li><span class="t_purple">chmod 555 scriptname</span> - выдача прав на чтение/исполнение любому пользователю в системе</li>
+      <li><span class="t_purple">chmod +rx scriptname</span> - выдача прав на чтение/исполнение любому пользователю в системе</li>
+      <li><span class="t_purple">chmod u+rx scriptname</span> - выдача прав на чтение/исполнение только "владельцу" скрипта</li>
+      <li><span class="t_purple">clear</span> - очистка экрана консоли</li>
+      <li><span class="t_purple">cp</span> - копирование файла или директории</li>
+      <li><span class="t_purple">date</span> - текущее время и дата; date +"%H:%M" - вывод времени в 24 часовом формате</li>
+      <li><span class="t_purple">exit</span> - выход</li>
+      <li><span class="t_purple">htop</span> - мониторинг процессов Linux</li>
+      <li><span class="t_purple">less</span> - отображение файла на консоли постранично</li>
+      <li><span class="t_purple">ls</span> - показывает файлы в текущей директории</li>
+      <li><span class="t_purple">man</span> - система помощи по командам</li>
+      <li><span class="t_purple">mkdir</span> - создание новой директории</li>
+      <li><span class="t_purple">mv</span> - перемещение файла или директории</li>
+      <li><span class="t_purple">nano</span> - редактирование файла</li>
+      <li><span class="t_purple">passwd</span> - устанавливает или изменяет пароль пользователя</li>
+      <li><span class="t_purple">pstree</span> - отображает дерево процессов</li>
+      <li><span class="t_purple">pwd</span> - показывает текущюю директорию</li>
+      <li><span class="t_purple">rm</span> - удаление файла или директории с ключом -r</li>
+      <li><span class="t_purple">top</span> - отображает список наиболее активных процессов</li>
+      <li><span class="t_purple">touch</span> - создание нового файла</li>
+      <li><span class="t_purple">tzselect</span> - настройка таймзоны</li>
+      <li><span class="t_purple">useradd</span> - добавляет учетную запись нового пользователя в систему и создает домашний каталог для данного пользователя</li>
+      <li><span class="t_purple">userdel</span> - удаляет учетную запись пользователя из системы и удалит соответствующие файлы</li>
+      <li><span class="t_purple">usermod -aG sudo pi</span> - разрешаем пользователю pi выполнять sudo</li>
+      <li><span class="t_purple">w</span> - выводит информацию о системе, список пользователей, подключенных к системе и процессы, связанные с пользователями</li>
+      <li><span class="t_purple">wget</span> - скачивание файла из интернета</li>
+      <li><span class="t_purple">who</span> - выводит список пользователей, работающих в настоящий момент в системе</li>
       <li></li>
     </ul>
     <div class="hd3">Настройка GIT</div>
@@ -57,11 +66,12 @@
       <li><font color="#FF0000">git pull</font> - Получить все изменения с Github</li>
       <li><font color="#FF0000">git status</font> - Отобразит текущее состояние проекта (что изменилось но не сохранено в репозитории)</li>
     </ul>
+***<br>
+<span class="t_blue">/usr/local/bin</span> - директория для скриптов<br>
+***<br>
 <pre>
 # Адрес репозитороия на GitHub:
 git@github.com:yuriybar/myhelp.git
-
-***
 ===============================================================================
 #yandex_disk - псевдоним для полного пути к удаленному репозиторию
 git remote add yandex_disk /mnt/data/Яндекс.Диск/git_repo/test_repo.git

@@ -48,36 +48,51 @@
       <li><span class="t_red">git restore &lt;file&gt;</span> - отменить изменения файла в рабочей директории</li>
       <li><span class="t_red">git push</span> - отправить все изменения в удаленный репозиторий (на Github)</li>
     </ul>
-<pre>
-***
-
-Чтобы удалить директорию из репозитория просто удаляете директорию стандартными методами ОС, а затем делаете:
-git add .
-и
-git commit -m 'Удалена директория folder'
-Ну и отправляете новый код на сервер, соответственно: 
-git push
-
-
+<hr>
+<p>
+Чтобы удалить директорию из репозитория просто удаляете директорию с диска стандартными методами ОС, а затем выполните: <br>
+<code><pre>
+  git add .
+  git commit -m 'Удалена директория folder'
+</pre></code>
+Ну и отправляете новый код на сервер, соответственно: <br> 
+<code><pre>
+  git push
+</pre></code>
+</p><p>
 После изменения файлов:
-git commit -a
+<code><pre>
+  git commit -a
+</pre></code>
 Правим комментарий и затем
-git push
-
+<code><pre>
+  git push
+</pre></code>
+</p><p>
 При добавлении или удалении файлов:
-git add .
-git commit -a
+<code><pre>
+  git add .
+  git commit -a
+</pre></code>
+</p><p>
 Правим комментарий и затем
-git push
-
+<code><pre>
+  git push
+</pre></code>
+</p><p>
 Чтобы добавить целую папку и все файлы в ней:
-git add folder_name/*
-git commit -a
+<code><pre>
+  git add folder_name/*
+  git commit -a
+</pre></code>
 Правим комментарий и затем
-git push
-
+<code><pre>
+  git push
+</pre></code>
+</p>
+<hr>
 ***
-
+<pre>
 Сервисы с бесплатными репозиториями: gitlab, bitbucket.org, 
 
 Как выйти из vim?
@@ -145,6 +160,7 @@ git remote set-url origin git@github.com:yuriybar/myhelp.git
 
 Обратное переключение при необходимости:
 git remote set-url origin https://github.com/yuriybar/myhelp.git
+</p>
 </pre>
     <ul>
       <li><a href="../Git/gitignore.html">Про файл .gitignore</a> - Описание и пример</li>
